@@ -22,22 +22,32 @@ public class EyeTrackTest : MonoBehaviour
     {
         if (faceActor == null) return;
 
+        // Hole die Positionen der Augen
         var leftEyePosition = EyeL.transform.position;
         var rightEyePosition = EyeR.transform.position;
 
-        // Berechne den mittleren Punkt der Augen für die Blickrichtung
-        Vector3 gazeDirection = (leftEyePosition + rightEyePosition) / 2;
+        // Berechne die Orientierungen der Augen in Blickrichtungen
+        Vector3 leftGazeDirection = Quaternion.Euler(faceActor.LeftEyeOrientation) * Vector3.forward;
+        Vector3 rightGazeDirection = Quaternion.Euler(faceActor.RightEyeOrientation) * Vector3.forward;
 
-        Debug.Log("Gaze direction: " + gazeDirection);
+        // Mittlere Blickrichtung berechnen
+        Vector3 averageGazeDirection = (leftGazeDirection + rightGazeDirection) / 2;
 
-        // Nutze die Blickrichtung, um eine Interaktion basierend auf dem Eye-Tracking zu erzeugen
-        Ray gazeRay = new Ray(gazeDirection, faceActor.RightEyeOrientation);
+        //Debug.Log("Gaze direction: " + averageGazeDirection);
+
+        // Raycast in die Blickrichtung vom rechten Auge
+        Ray gazeRay = new Ray(rightEyePosition, -rightGazeDirection);
         RaycastHit hit;
 
         if (Physics.Raycast(gazeRay, out hit))
         {
             Debug.Log("User is looking at: " + hit.collider.name);
-            // Hier kannst du interaktive Logik hinzufügen, z.B. ein UI-Element hervorheben oder aktivieren.
+
+            // Setze das angeguckte GameObject inaktiv
+            hit.collider.gameObject.SetActive(false);
         }
+
+        // Debug-Linie in Blickrichtung
+        Debug.DrawLine(rightEyePosition, -(rightEyePosition + rightGazeDirection * 100), Color.red);
     }
 }
