@@ -9,12 +9,13 @@ public class EyeTrackTest : MonoBehaviour
     [SerializeField] FaceActor faceActor;
     [SerializeField] GameObject EyeL;
     [SerializeField] GameObject EyeR;
-
+    [SerializeField] float reactivationTime = 5f; // Zeit bis zur Wiederaktivierung
+    [SerializeField] GameObject CantLookAway;
 
     // Start is called before the first frame update
     void Start()
     {
-       var x = faceActor.RightEyeOrientation;
+     
     }
 
     // Update is called once per frame
@@ -30,13 +31,16 @@ public class EyeTrackTest : MonoBehaviour
         Vector3 leftGazeDirection = Quaternion.Euler(faceActor.LeftEyeOrientation) * Vector3.forward;
         Vector3 rightGazeDirection = Quaternion.Euler(faceActor.RightEyeOrientation) * Vector3.forward;
 
+        // Berechne die Mitte der beiden Augenpositionen als Startpunkt des Raycasts
+        Vector3 gazeOrigin = (leftEyePosition + rightEyePosition) / 2;
+
         // Mittlere Blickrichtung berechnen
         Vector3 averageGazeDirection = (leftGazeDirection + rightGazeDirection) / 2;
 
         //Debug.Log("Gaze direction: " + averageGazeDirection);
 
         // Raycast in die Blickrichtung vom rechten Auge
-        Ray gazeRay = new Ray(rightEyePosition, -rightGazeDirection);
+        Ray gazeRay = new Ray(gazeOrigin, -averageGazeDirection);
         RaycastHit hit;
 
         if (Physics.Raycast(gazeRay, out hit))
@@ -44,10 +48,20 @@ public class EyeTrackTest : MonoBehaviour
             Debug.Log("User is looking at: " + hit.collider.name);
 
             // Setze das angeguckte GameObject inaktiv
-            hit.collider.gameObject.SetActive(false);
+            //hit.collider.gameObject.SetActive(false);
+            StartCoroutine(ReactivateObject(hit.collider.gameObject));
         }
 
         // Debug-Linie in Blickrichtung
-        Debug.DrawLine(rightEyePosition, -(rightEyePosition + rightGazeDirection * 100), Color.red);
+        Debug.DrawLine(gazeOrigin, -averageGazeDirection * 100, Color.red);
+
+        CantLookAway.transform.position = gazeOrigin - averageGazeDirection * 5;
+    }
+
+    // Coroutine zur Wiederaktivierung des Objekts nach einer bestimmten Zeit
+    private IEnumerator ReactivateObject(GameObject obj)
+    {
+        yield return new WaitForSeconds(reactivationTime);
+        obj.SetActive(true);
     }
 }
