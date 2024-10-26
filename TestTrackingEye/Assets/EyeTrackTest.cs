@@ -11,11 +11,12 @@ public class EyeTrackTest : MonoBehaviour
     [SerializeField] GameObject EyeR;
     [SerializeField] float reactivationTime = 5f; // Zeit bis zur Wiederaktivierung
     [SerializeField] GameObject CantLookAway;
+    [SerializeField] WaldoManager WaldoManager;
 
     // Start is called before the first frame update
     void Start()
     {
-     
+         WaldoManager = FindObjectOfType<WaldoManager>();
     }
 
     // Update is called once per frame
@@ -45,7 +46,16 @@ public class EyeTrackTest : MonoBehaviour
 
         if (Physics.Raycast(gazeRay, out hit))
         {
-            Debug.Log("User is looking at: " + hit.collider.name);
+            //Debug.Log("User is looking at: " + hit.collider.name);
+            if(WaldoManager.rightObjectToLookAt.name == hit.collider.gameObject.name)
+            {
+                Debug.Log("Riiiiiiiichtig!!!!!!!");
+
+            }
+            else if(hit.collider != null)
+            {
+                Debug.Log("Falsch du Penner!!!!!!!" + hit.collider.name);
+            }
 
             // Setze das angeguckte GameObject inaktiv
             //hit.collider.gameObject.SetActive(false);
