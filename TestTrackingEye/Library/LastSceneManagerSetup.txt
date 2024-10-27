@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/Samples/Live Capture/3.0.0/ARKit Face Sample/FaceCaptureSample.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
