@@ -56,7 +56,7 @@ public class WaldoManager : MonoBehaviour
         while (true)
         {
             Waldoing();
-            yield return new WaitForSeconds(15);       
+            yield return new WaitForSeconds(30);       
         }
         
     }

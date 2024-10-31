@@ -28,20 +28,29 @@ public class EyeTrackTest : MonoBehaviour
         var leftEyePosition = EyeL.transform.position;
         var rightEyePosition = EyeR.transform.position;
 
+
         // Berechne die Orientierungen der Augen in Blickrichtungen
+
+        var headDirection = Quaternion.Euler(faceActor.HeadOrientation);
+
         Vector3 leftGazeDirection = Quaternion.Euler(faceActor.LeftEyeOrientation) * Vector3.forward;
         Vector3 rightGazeDirection = Quaternion.Euler(faceActor.RightEyeOrientation) * Vector3.forward;
+
+        leftGazeDirection = headDirection* leftGazeDirection;
+        rightGazeDirection = headDirection * rightGazeDirection;
 
         // Berechne die Mitte der beiden Augenpositionen als Startpunkt des Raycasts
         Vector3 gazeOrigin = (leftEyePosition + rightEyePosition) / 2;
 
+
         // Mittlere Blickrichtung berechnen
         Vector3 averageGazeDirection = (leftGazeDirection + rightGazeDirection) / 2;
+        averageGazeDirection = new Vector3(averageGazeDirection.x, -averageGazeDirection.y, averageGazeDirection.z);
 
         //Debug.Log("Gaze direction: " + averageGazeDirection);
 
         // Raycast in die Blickrichtung vom rechten Auge
-        Ray gazeRay = new Ray(gazeOrigin, -averageGazeDirection);
+        Ray gazeRay = new Ray(gazeOrigin, averageGazeDirection);
         RaycastHit hit;
 
         if (Physics.Raycast(gazeRay, out hit))
@@ -65,7 +74,8 @@ public class EyeTrackTest : MonoBehaviour
         // Debug-Linie in Blickrichtung
         Debug.DrawLine(gazeOrigin, -averageGazeDirection * 100, Color.red);
 
-        CantLookAway.transform.position = gazeOrigin - averageGazeDirection * 5;
+        Vector3 vector3 = (gazeOrigin - averageGazeDirection * 5);
+        CantLookAway.transform.position = new Vector3(vector3.x,vector3.y,vector3.z);
     }
 
     // Coroutine zur Wiederaktivierung des Objekts nach einer bestimmten Zeit
