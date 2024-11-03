@@ -9,6 +9,7 @@ public class EyeTrackTest : MonoBehaviour
     [SerializeField] FaceActor faceActor;
     [SerializeField] GameObject EyeL;
     [SerializeField] GameObject EyeR;
+    [SerializeField] GameObject Head;
     [SerializeField] float reactivationTime = 5f; // Zeit bis zur Wiederaktivierung
     [SerializeField] GameObject CantLookAway;
     [SerializeField] WaldoManager WaldoManager;
@@ -38,10 +39,10 @@ public class EyeTrackTest : MonoBehaviour
 
         // Berechne die Orientierungen der Augen in Blickrichtungen
 
-        var headDirection = Quaternion.Euler(faceActor.HeadOrientation);
+        var headDirection = (Head.transform.rotation);
 
-        Vector3 leftGazeDirection = Quaternion.Euler(faceActor.LeftEyeOrientation) * Vector3.forward;
-        Vector3 rightGazeDirection = Quaternion.Euler(faceActor.RightEyeOrientation) * Vector3.forward;
+        Vector3 leftGazeDirection = (EyeL.transform.rotation) * Vector3.forward;
+        Vector3 rightGazeDirection = (EyeR.transform.rotation) * Vector3.forward;
 
         leftGazeDirection = headDirection * leftGazeDirection;
         rightGazeDirection = headDirection * rightGazeDirection;
