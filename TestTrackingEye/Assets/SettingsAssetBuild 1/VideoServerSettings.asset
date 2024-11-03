@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a3c2811d41034e52a6d6c33ac73a207, type: 3}
-  m_Name: ARKitSettings
+  m_Script: {fileID: 11500000, guid: f8bc39f6351b64ce182b02af8e4c4fdd, type: 3}
+  m_Name: VideoServerSettings
   m_EditorClassIdentifier: 
-  m_Requirement: 0
-  m_FaceTracking: 1
+  m_Encoder: 30
+  m_ResolutionScale: 1
+  m_FrameRate: 60
+  m_Quality: 50
+  m_PrioritizeLatency: 1
