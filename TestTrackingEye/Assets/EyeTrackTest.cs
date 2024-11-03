@@ -53,7 +53,7 @@ public class EyeTrackTest : MonoBehaviour
 
         // Mittlere Blickrichtung berechnen
         Vector3 averageGazeDirection = (leftGazeDirection + rightGazeDirection) / 2;
-        averageGazeDirection = new Vector3(averageGazeDirection.x, -averageGazeDirection.y, averageGazeDirection.z);
+        averageGazeDirection = new Vector3(averageGazeDirection.x, averageGazeDirection.y, averageGazeDirection.z);
 
         //Debug.Log("Gaze direction: " + averageGazeDirection);
 
