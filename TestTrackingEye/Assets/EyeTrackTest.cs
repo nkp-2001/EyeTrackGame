@@ -13,15 +13,22 @@ public class EyeTrackTest : MonoBehaviour
     [SerializeField] GameObject CantLookAway;
     [SerializeField] WaldoManager WaldoManager;
 
+    [SerializeField] bool waldoMode = true;
+
+    Ray gazeRay;
+
     // Start is called before the first frame update
     void Start()
     {
-         WaldoManager = FindObjectOfType<WaldoManager>();
+        gazeRay = new Ray(transform.position, Vector3.forward);
+        WaldoManager = FindObjectOfType<WaldoManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         if (faceActor == null) return;
 
         // Hole die Positionen der Augen
@@ -36,7 +43,7 @@ public class EyeTrackTest : MonoBehaviour
         Vector3 leftGazeDirection = Quaternion.Euler(faceActor.LeftEyeOrientation) * Vector3.forward;
         Vector3 rightGazeDirection = Quaternion.Euler(faceActor.RightEyeOrientation) * Vector3.forward;
 
-        leftGazeDirection = headDirection* leftGazeDirection;
+        leftGazeDirection = headDirection * leftGazeDirection;
         rightGazeDirection = headDirection * rightGazeDirection;
 
         // Berechne die Mitte der beiden Augenpositionen als Startpunkt des Raycasts
@@ -50,32 +57,41 @@ public class EyeTrackTest : MonoBehaviour
         //Debug.Log("Gaze direction: " + averageGazeDirection);
 
         // Raycast in die Blickrichtung vom rechten Auge
-        Ray gazeRay = new Ray(gazeOrigin, averageGazeDirection);
+        gazeRay = new Ray(gazeOrigin, -averageGazeDirection);
         RaycastHit hit;
 
         if (Physics.Raycast(gazeRay, out hit))
         {
-            //Debug.Log("User is looking at: " + hit.collider.name);
-            if(WaldoManager.rightObjectToLookAt.name == hit.collider.gameObject.name)
+            print("--öef3w");
+            if (waldoMode)
             {
-                Debug.Log("Riiiiiiiichtig!!!!!!!");
+                //Debug.Log("User is looking at: " + hit.collider.name);
+                if (WaldoManager.rightObjectToLookAt.name == hit.collider.gameObject.name)
+                {
+                    Debug.Log("Riiiiiiiichtig!!!!!!!");
 
+                }
+                else if (hit.collider != null)
+                {
+                    Debug.Log("Falsch du Penner!!!!!!!" + hit.collider.name);
+                }
+
+                // Setze das angeguckte GameObject inaktiv
+                //hit.collider.gameObject.SetActive(false);
+                StartCoroutine(ReactivateObject(hit.collider.gameObject));
             }
-            else if(hit.collider != null)
+            else
             {
-                Debug.Log("Falsch du Penner!!!!!!!" + hit.collider.name);
+                print("--" + hit.collider.gameObject.name);
             }
 
-            // Setze das angeguckte GameObject inaktiv
-            //hit.collider.gameObject.SetActive(false);
-            StartCoroutine(ReactivateObject(hit.collider.gameObject));
         }
 
         // Debug-Linie in Blickrichtung
         Debug.DrawLine(gazeOrigin, -averageGazeDirection * 100, Color.red);
 
         Vector3 vector3 = (gazeOrigin - averageGazeDirection * 5);
-        CantLookAway.transform.position = new Vector3(vector3.x,vector3.y,vector3.z);
+        CantLookAway.transform.position = new Vector3(vector3.x, vector3.y, vector3.z);
     }
 
     // Coroutine zur Wiederaktivierung des Objekts nach einer bestimmten Zeit
@@ -84,4 +100,10 @@ public class EyeTrackTest : MonoBehaviour
         yield return new WaitForSeconds(reactivationTime);
         obj.SetActive(true);
     }
+    public Ray GetRayCast()
+    {
+        return gazeRay;
+    }
 }
+
+
