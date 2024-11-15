@@ -29,7 +29,6 @@ public class EyeTrackTest : MonoBehaviour
     void Update()
     {
 
-
         if (faceActor == null) return;
 
         // Hole die Positionen der Augen

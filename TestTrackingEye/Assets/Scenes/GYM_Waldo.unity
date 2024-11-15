@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3c82e07b9a14fe3958806045dbb5693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_IsLive: 1
   m_Actor: {fileID: 3493303856234360002}
   m_Channels: 15
@@ -638,7 +638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &221137860
 Animator:
   serializedVersion: 7
@@ -3234,7 +3234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1739654067
 Transform:
   m_ObjectHideFlags: 0
@@ -3266,7 +3266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1874142486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3289,6 +3289,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.7784343, y: -4.224731, z: -9.499194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1927672336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927672338}
+  - component: {fileID: 1927672337}
+  m_Layer: 0
+  m_Name: FaceCaptureServer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1927672337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927672336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b633f4f2d42ef4299d857c179afb82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1927672338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927672336}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.295994, y: 4.0905423, z: 7.852274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3659,7 +3703,7 @@ MonoBehaviour:
   EyeR: {fileID: 586391129}
   Head: {fileID: 19686334}
   reactivationTime: 5
-  CantLookAway: {fileID: 0}
+  CantLookAway: {fileID: 2146407171}
   WaldoManager: {fileID: 0}
   waldoMode: 0
 --- !u!1 &5710712751572895728
@@ -3762,3 +3806,4 @@ SceneRoots:
   - {fileID: 1739654067}
   - {fileID: 1874142487}
   - {fileID: 1557433978}
+  - {fileID: 1927672338}
