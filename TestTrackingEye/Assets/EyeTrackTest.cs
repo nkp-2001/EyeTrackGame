@@ -43,6 +43,8 @@ public class EyeTrackTest : MonoBehaviour
         Vector3 leftGazeDirection = (EyeL.transform.rotation) * Vector3.forward;
         Vector3 rightGazeDirection = (EyeR.transform.rotation) * Vector3.forward;
 
+        Vector3 inverseY = new Vector3(1, -1, 1);
+
         leftGazeDirection = headDirection * leftGazeDirection;
         rightGazeDirection = headDirection * rightGazeDirection;
 
@@ -51,13 +53,13 @@ public class EyeTrackTest : MonoBehaviour
 
 
         // Mittlere Blickrichtung berechnen
-        Vector3 averageGazeDirection = (leftGazeDirection + rightGazeDirection) / 2;
+        Vector3 averageGazeDirection = (InvertY(leftGazeDirection + rightGazeDirection)) / 2;
         averageGazeDirection = new Vector3(averageGazeDirection.x, averageGazeDirection.y, averageGazeDirection.z);
 
         //Debug.Log("Gaze direction: " + averageGazeDirection);
 
         // Raycast in die Blickrichtung vom rechten Auge
-        gazeRay = new Ray(gazeOrigin, -averageGazeDirection);
+        gazeRay = new Ray(gazeOrigin, averageGazeDirection);
         RaycastHit hit;
 
         if (Physics.Raycast(gazeRay, out hit))
@@ -90,6 +92,11 @@ public class EyeTrackTest : MonoBehaviour
         // Debug-Linie in Blickrichtung
         Debug.DrawLine(gazeOrigin, -averageGazeDirection * 100, Color.red);
 
+        Debug.DrawLine(leftEyePosition, InvertY(leftGazeDirection) * 100, Color.blue);
+        Debug.DrawLine(rightEyePosition, InvertY(rightEyePosition) * 100, Color.green);
+
+        Debug.DrawLine(gazeOrigin, headDirection * Vector3.forward * 100, Color.black);
+
         Vector3 vector3 = (gazeOrigin - averageGazeDirection * 5);
         CantLookAway.transform.position = new Vector3(vector3.x, vector3.y, vector3.z);
     }
@@ -103,6 +110,11 @@ public class EyeTrackTest : MonoBehaviour
     public Ray GetRayCast()
     {
         return gazeRay;
+    }
+    public static Vector3 InvertY(Vector3 original)
+    {
+        // Create a new vector with the same X and Z, but inverted Y
+        return new Vector3(original.x, -original.y, original.z);
     }
 }
 
