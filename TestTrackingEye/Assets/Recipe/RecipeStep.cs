@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class RecipeStep
 {
-    int value = -1;
+    protected int value = -1;
 
-    string instruction = "Null";
+    protected string instruction = "Null";
 
-    int nextsceneIndex = -1;
+    protected int nextsceneIndex = -1;
 
     public RecipeStep(int value, string instruction,int sceneIndex)
     {
         this.value = value;
         this.nextsceneIndex = sceneIndex;
         this.instruction = instruction;
+        SetInstruction();
     }
     public RecipeStep(int value)
     {
@@ -25,12 +26,12 @@ public class RecipeStep
     public string Instruction { get => instruction; set => instruction = value; }
     public int SceneIndex { get => nextsceneIndex; set => nextsceneIndex = value; }
 
-    public void SetInstruction()
+    virtual public void SetInstruction()
     {
         this.instruction = string.Format(this.instruction,value);
     }
 
-    float EvaluateCompareStep(RecipeStep otherStep)
+    virtual public float EvaluateCompareStep(RecipeStep otherStep)
     {
         int diffrence = Math.Abs(otherStep.value - this.value);
 

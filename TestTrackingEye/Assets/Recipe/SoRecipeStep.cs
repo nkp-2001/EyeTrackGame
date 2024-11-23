@@ -3,12 +3,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "OwnScriptableObjects/SoRecipeStep")]
 public class SoRecipeStep : ScriptableObject
 {
-   
-   [SerializeField] int value = -1;
-   [SerializeField] string instruction = "Do X";
-   [SerializeField] int sceneIndex = -1;
 
-    public RecipeStep CreateRecipeStepObject()
+   public int value = -1;
+   public string instruction = "Do X";
+   public int sceneIndex = -1;
+
+    virtual public RecipeStep CreateRecipeStepObject()
     {
         return new RecipeStep(value, instruction, sceneIndex);
     }

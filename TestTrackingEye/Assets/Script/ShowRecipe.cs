@@ -4,7 +4,7 @@ using TMPro;
 public class ShowRecipe : MonoBehaviour
 {
    [SerializeField] GameObject TimeIndiactor;
-    [SerializeField] TextMeshProUGUI InstructionText;
+   [SerializeField] TextMeshProUGUI InstructionText;
    [SerializeField] float Maxtime;
    float time;
 

@@ -62,6 +62,7 @@ public class EyeTrackTest : MonoBehaviour
 
         if (Physics.Raycast(gazeRay, out hit))
         {
+            /*
             print("--öef3w");
             if (waldoMode)
             {
@@ -84,6 +85,7 @@ public class EyeTrackTest : MonoBehaviour
             {
                 print("--" + hit.collider.gameObject.name);
             }
+            */
 
         }
         Debug.DrawLine(leftEyePosition, -leftGazeDirection * 100, Color.green);
@@ -97,7 +99,11 @@ public class EyeTrackTest : MonoBehaviour
         Debug.DrawLine(gazeOrigin, -averageGazeDirection * 100, Color.red);
 
         Vector3 vector3 = (gazeOrigin - averageGazeDirection * 5);
-        CantLookAway.transform.position = new Vector3(vector3.x, vector3.y, vector3.z);
+        if(CantLookAway != null)
+        {
+            CantLookAway.transform.position = new Vector3(vector3.x, vector3.y, vector3.z);
+        }
+       
     }
 
     // Coroutine zur Wiederaktivierung des Objekts nach einer bestimmten Zeit

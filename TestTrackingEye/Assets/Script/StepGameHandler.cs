@@ -4,12 +4,16 @@ public class StepGameHandler : MonoBehaviour
 {
     int score;
 
-    public void IncreaseValue()
+    virtual public void ChnageValue(int value)
     {
-        score++;
+        score = value;
+    }
+    virtual public int GetValue()
+    {
+        return score;
     }
 
-    public void EndStep()
+    virtual public void EndStep()
     {
 
     }

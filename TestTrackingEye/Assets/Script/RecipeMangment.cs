@@ -1,35 +1,49 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System;
 
 public class RecipeMangment : MonoBehaviour
 {
     [SerializeField] Recipe recipe;
 
-    [SerializeField] private List<RecipeStep> RecipeSteps;
-    [SerializeField] private List<RecipeStep> playerPerformanceSteps;
+    public List<RecipeStep> recipeSteps;
+    public List<RecipeStep> playerPerformanceSteps;
     [SerializeField] int step = 0;
+
+  
 
     private void OnEnable()
     {
         CodeEventHandler.StartBrewing += StartSystem;
+        CodeEventHandler.NextStepInRecipe += RecordAndNextStep;
     }
     void Awake()
     {
-        GetSteps(recipe);
+        RecipeMangment[] objs = FindObjectsByType<RecipeMangment>(FindObjectsSortMode.None);
 
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        GetSteps(recipe);
         DontDestroyOnLoad(this.gameObject);
     }
-
+    private void Start()
+    {
+        playerPerformanceSteps = new List<RecipeStep>();
+    }
 
     public void GetSteps(Recipe recipe)
     {
-        RecipeSteps = recipe.GetRecipeSteps();
+
+        recipeSteps = recipe.GetRecipeSteps();
     }
     public List<string> GetStepsInstrcution()
     {
         List<string> instruction = new List<string>(); ;
-        foreach(RecipeStep step in RecipeSteps)
+        foreach(RecipeStep step in recipeSteps)
             instruction.Add(step.Instruction);
         return instruction;
     }
@@ -37,28 +51,30 @@ public class RecipeMangment : MonoBehaviour
     public void NextStep()
     {
         step++;
-        if(step >= RecipeSteps.Count)
+        if(step >= recipeSteps.Count)
         {
-            // End of Recipe Load Result Scene Here 
+            SceneManager.LoadScene(3);
         }
         else
         {
-            SceneManager.LoadScene(RecipeSteps[step].SceneIndex);
+            SceneManager.LoadScene(recipeSteps[step].SceneIndex);
         }
     }
     public void RecordAndNextStep(RecipeStep step)
     {
         playerPerformanceSteps.Add(step);
+        print(playerPerformanceSteps[0]);
         NextStep();
     }
     public void StartSystem() // for steo
     {
         step = 0;
-        SceneManager.LoadScene(RecipeSteps[step].SceneIndex);
+        SceneManager.LoadScene(recipeSteps[step].SceneIndex);
     }
     private void OnDisable()
     {
         CodeEventHandler.StartBrewing -= StartSystem;
+        CodeEventHandler.NextStepInRecipe -= RecordAndNextStep;
     }
 
 
