@@ -26,7 +26,7 @@ public class EyeTrackTest : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (faceActor == null) return;
@@ -40,8 +40,8 @@ public class EyeTrackTest : MonoBehaviour
 
         var headDirection = (Head.transform.rotation);
 
-        Vector3 leftGazeDirection = (EyeL.transform.rotation) * Vector3.forward;
-        Vector3 rightGazeDirection = (EyeR.transform.rotation) * Vector3.forward;
+        Vector3 leftGazeDirection = (EyeL.transform.rotation) * Vector3.forward *-1;
+        Vector3 rightGazeDirection = (EyeR.transform.rotation) * Vector3.forward * -1;
 
         leftGazeDirection = headDirection * leftGazeDirection;
         rightGazeDirection = headDirection * rightGazeDirection;
@@ -86,6 +86,12 @@ public class EyeTrackTest : MonoBehaviour
             }
 
         }
+        Debug.DrawLine(leftEyePosition, -leftGazeDirection * 100, Color.green);
+        Debug.DrawLine(rightEyePosition, -rightGazeDirection * 100, Color.blue);
+
+        Debug.DrawLine(Head.transform.transform.position, ((Head.transform.rotation) * Vector3.forward) * 100, Color.black); // maybe not "real"
+
+
 
         // Debug-Linie in Blickrichtung
         Debug.DrawLine(gazeOrigin, -averageGazeDirection * 100, Color.red);
