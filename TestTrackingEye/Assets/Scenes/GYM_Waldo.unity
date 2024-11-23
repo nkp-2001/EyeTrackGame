@@ -4378,10 +4378,8 @@ PrefabInstance:
       propertyPath: CameareLookPostion
       value: 
       objectReference: {fileID: 402464200}
-    m_RemovedComponents:
-    - {fileID: 3028693831370874758, guid: 01105ad442a2c6842a902b810878a5e6, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 4637842877811936098, guid: 01105ad442a2c6842a902b810878a5e6, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01105ad442a2c6842a902b810878a5e6, type: 3}
