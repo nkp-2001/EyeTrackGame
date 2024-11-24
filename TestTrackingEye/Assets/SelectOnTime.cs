@@ -28,14 +28,16 @@ public class SelectOnTime : MonoBehaviour
                 if (hit.collider.transform == transform)
                 {
                     currentSelctedTime -= Time.deltaTime;
-                    // TimeIndiactor.transform.localScale = new Vector3(1 - (currentSelctedTime / timeToSelect), TimeIndiactor.transform.localScale.y, TimeIndiactor.transform.localScale.z);
+                    TimeIndiactor.transform.localScale = new Vector3(1-(currentSelctedTime/ timeToSelect), TimeIndiactor.transform.localScale.y, TimeIndiactor.transform.localScale.z);
+                }
+                else
+                {
+                    currentSelctedTime = timeToSelect;
+                    TimeIndiactor.transform.localScale = new Vector3(0, TimeIndiactor.transform.localScale.y, TimeIndiactor.transform.localScale.z);
                 }
 
             }
-            else
-            {
-                currentSelctedTime = timeToSelect;
-            }
+           
             if(currentSelctedTime <= 0)
             {
                 CodeEventHandler.Trigger_BasicSelection(myValue);

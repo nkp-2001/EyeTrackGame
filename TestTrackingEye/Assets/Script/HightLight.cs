@@ -8,6 +8,7 @@ public class HightLight : MonoBehaviour
 
     private List<Material[]> defaultMaterialList = new List<Material[]>();
     private MeshRenderer[] meshRenderers;
+    [SerializeField] bool onlyparent = false;
 
     bool hightlight;
 
@@ -61,9 +62,17 @@ public class HightLight : MonoBehaviour
     {
         if (highlightMaterial != null)
         {
-            foreach (MeshRenderer MS in meshRenderers)
+            if (onlyparent)
             {
-                MS.material = highlightMaterial;
+                gameObject.GetComponent<Renderer>().material = highlightMaterial;
+            }
+            else
+            {
+                foreach (MeshRenderer MS in meshRenderers)
+                {
+                    MS.material = highlightMaterial;
+                }
+                
             }
             hightlight = true;
         }
@@ -74,12 +83,20 @@ public class HightLight : MonoBehaviour
     }
     private void UnHightLighting()
     {
-        int i = 0;
-        foreach (MeshRenderer MS in meshRenderers)
+        if (onlyparent)
         {
-            MS.materials = defaultMaterialList[i];
-            i++;
+            gameObject.GetComponent<Renderer>().material = defaultMaterialList[0][0];
         }
+        else
+        {
+            int i = 0;
+            foreach (MeshRenderer MS in meshRenderers)
+            {
+                MS.materials = defaultMaterialList[i];
+                i++;
+            }
+        }
+        
         hightlight = false;
     }
 }

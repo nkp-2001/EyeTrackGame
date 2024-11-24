@@ -56,7 +56,7 @@ public class LiveCaptureServer : MonoBehaviour
     }
     void OnDisable()
     {
-        _server.SetEnabled(false);
+        _server.SetEnabled(false);   
     }
 }
 
