@@ -4,6 +4,29 @@ using Unity.LiveCapture.CompanionApp;
 public class LiveCaptureServer : MonoBehaviour
 {
     private CompanionAppServer _server;
+    bool starting = true;
+
+    void Awake()
+    {
+        LiveCaptureServer[] objs = FindObjectsByType<LiveCaptureServer>(FindObjectsSortMode.None);
+
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    void OnEnable()
+    {
+        if (!starting)
+        {
+            _server.SetEnabled(true);
+        }
+       
+    }
+
 
     void Start()
     {
@@ -12,6 +35,7 @@ public class LiveCaptureServer : MonoBehaviour
         _server.Port = 9000;
         _server.StartServer();
         Debug.Log("Server gestartet");
+        starting = false;
     }
 
     void Update()
@@ -29,6 +53,10 @@ public class LiveCaptureServer : MonoBehaviour
             _server.Dispose();
             Debug.Log("Server gestoppt");
         }
+    }
+    void OnDisable()
+    {
+        _server.SetEnabled(false);
     }
 }
 
