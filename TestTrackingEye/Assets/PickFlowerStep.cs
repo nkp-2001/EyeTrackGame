@@ -14,7 +14,7 @@ public class PickFlowerStep : StepGameHandler
         print("Import note"+ step.Value);
         CodeEventHandler.Trigger_NextStepInRecipe(step);
     }
-    public void GetSelection(int i)
+    override public void GetSelection(int i)
     {
         step = new SelectRightStep(i);
         EndStep();

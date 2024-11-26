@@ -43,6 +43,10 @@ public class HightLight : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            eyeTrackTest = FindAnyObjectByType<EyeTrackTest>();
+        }
     }
 
     public void CheckRaycast(RaycastHit hit)

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StepGameHandler : MonoBehaviour
 {
-    int score;
+    public int score;
 
     virtual public void ChnageValue(int value)
     {
@@ -11,6 +11,11 @@ public class StepGameHandler : MonoBehaviour
     virtual public int GetValue()
     {
         return score;
+    }
+    virtual public void GetSelection(int i)
+    {
+        score = i;
+      
     }
 
     virtual public void EndStep()

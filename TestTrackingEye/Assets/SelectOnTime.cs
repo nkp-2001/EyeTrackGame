@@ -9,6 +9,9 @@ public class SelectOnTime : MonoBehaviour
 
     [SerializeField] int myValue;
     [SerializeField] GameObject TimeIndiactor;
+    [SerializeField] bool blockedMode = false; // If On A Filed can not be selcted if an Selection had happend and you keep looking at it
+    bool lookedAT = false;
+    bool lookedATAfterSelected = false;
 
     private void Start()
     {
@@ -27,21 +30,45 @@ public class SelectOnTime : MonoBehaviour
             {
                 if (hit.collider.transform == transform)
                 {
+                    lookedAT = true;
                     currentSelctedTime -= Time.deltaTime;
-                    TimeIndiactor.transform.localScale = new Vector3(1-(currentSelctedTime/ timeToSelect), TimeIndiactor.transform.localScale.y, TimeIndiactor.transform.localScale.z);
+                    if(TimeIndiactor != null)
+                    {
+                        TimeIndiactor.transform.localScale = new Vector3(1 - (currentSelctedTime / timeToSelect), TimeIndiactor.transform.localScale.y, TimeIndiactor.transform.localScale.z);
+                    }
+                   
                 }
                 else
                 {
+                    lookedAT = false;
+                    if (lookedATAfterSelected)
+                    {
+                        lookedATAfterSelected = false;
+                    }
                     currentSelctedTime = timeToSelect;
-                    TimeIndiactor.transform.localScale = new Vector3(0, TimeIndiactor.transform.localScale.y, TimeIndiactor.transform.localScale.z);
+                    if (TimeIndiactor != null)
+                    {
+                        TimeIndiactor.transform.localScale = new Vector3(0, TimeIndiactor.transform.localScale.y, TimeIndiactor.transform.localScale.z);
+                    }
+                   
                 }
 
             }
            
             if(currentSelctedTime <= 0)
             {
-                CodeEventHandler.Trigger_BasicSelection(myValue);
+                
+                if(!(blockedMode && lookedATAfterSelected))
+                {
+                    CodeEventHandler.Trigger_BasicSelection(myValue);
+                }
+               
+                lookedATAfterSelected = true;
             }
+        }
+        else
+        {
+            eyeTrackTest = FindAnyObjectByType<EyeTrackTest>();
         }
 
     }
