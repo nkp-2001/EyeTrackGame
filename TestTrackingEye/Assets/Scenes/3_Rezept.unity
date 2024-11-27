@@ -567,7 +567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeIndiactor: {fileID: 1839660068}
   InstructionText: {fileID: 534827717}
-  Maxtime: 2
+  Maxtime: 4
 --- !u!4 &689653083
 Transform:
   m_ObjectHideFlags: 0
