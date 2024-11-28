@@ -72,4 +72,8 @@ public class SelectOnTime : MonoBehaviour
         }
 
     }
+    public void SetValue(int i)
+    {
+        myValue = i;
+    }
 }
