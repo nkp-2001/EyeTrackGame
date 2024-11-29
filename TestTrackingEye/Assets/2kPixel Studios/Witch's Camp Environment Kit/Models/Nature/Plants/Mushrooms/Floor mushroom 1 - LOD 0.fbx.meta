@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: cc0a2b0a8e7bbbd46a9fd08bbcd57975
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Mushroom.001
+    100004: Mushroom.002
+    100006: Mushroom.003
+    100008: Mushroom.004
+    100010: Mushroom.005
+    100012: Mushroom.006
+    100014: Mushroom.007
+    100016: Mushroom.008
+    100018: Mushroom 1 - LOD 0
+    100020: Mushroom 2 - LOD 0
+    100022: Mushroom 3 - LOD 0
+    100024: Mushroom 4 - LOD 0
+    100026: Mushroom 5 - LOD 0
+    100028: Mushroom 6 - LOD 0
+    100030: Mushroom 7 - LOD 0
+    100032: Mushroom 8 - LOD 0
+    400000: //RootNode
+    400002: Mushroom.001
+    400004: Mushroom.002
+    400006: Mushroom.003
+    400008: Mushroom.004
+    400010: Mushroom.005
+    400012: Mushroom.006
+    400014: Mushroom.007
+    400016: Mushroom.008
+    400018: Mushroom 1 - LOD 0
+    400020: Mushroom 2 - LOD 0
+    400022: Mushroom 3 - LOD 0
+    400024: Mushroom 4 - LOD 0
+    400026: Mushroom 5 - LOD 0
+    400028: Mushroom 6 - LOD 0
+    400030: Mushroom 7 - LOD 0
+    400032: Mushroom 8 - LOD 0
+    2100000: Material
+    2300000: //RootNode
+    2300002: Mushroom.001
+    2300004: Mushroom.002
+    2300006: Mushroom.003
+    2300008: Mushroom.004
+    2300010: Mushroom.005
+    2300012: Mushroom.006
+    2300014: Mushroom.007
+    2300016: Mushroom.008
+    2300018: Mushroom 1 - LOD 0
+    2300020: Mushroom 2 - LOD 0
+    2300022: Mushroom 3 - LOD 0
+    2300024: Mushroom 4 - LOD 0
+    2300026: Mushroom 5 - LOD 0
+    2300028: Mushroom 6 - LOD 0
+    2300030: Mushroom 7 - LOD 0
+    2300032: Mushroom 8 - LOD 0
+    3300000: //RootNode
+    3300002: Mushroom.001
+    3300004: Mushroom.002
+    3300006: Mushroom.003
+    3300008: Mushroom.004
+    3300010: Mushroom.005
+    3300012: Mushroom.006
+    3300014: Mushroom.007
+    3300016: Mushroom.008
+    3300018: Mushroom 1 - LOD 0
+    3300020: Mushroom 2 - LOD 0
+    3300022: Mushroom 3 - LOD 0
+    3300024: Mushroom 4 - LOD 0
+    3300026: Mushroom 5 - LOD 0
+    3300028: Mushroom 6 - LOD 0
+    3300030: Mushroom 7 - LOD 0
+    3300032: Mushroom 8 - LOD 0
+    4300000: Mushrooms
+    4300002: Mushroom.008
+    4300004: Mushroom.007
+    4300006: Mushroom.006
+    4300008: Mushroom.005
+    4300010: Mushroom.004
+    4300012: Mushroom.003
+    4300014: Mushroom.002
+    4300016: Mushroom.001
+    4300018: Mushroom 8 - LOD 0
+    4300020: Mushroom 7 - LOD 0
+    4300022: Mushroom 6 - LOD 0
+    4300024: Mushroom 5 - LOD 0
+    4300026: Mushroom 4 - LOD 0
+    4300028: Mushroom 3 - LOD 0
+    4300030: Mushroom 2 - LOD 0
+    4300032: Mushroom 1 - LOD 0
+    4300034: Floor mushroom 1 - LOD 0
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 5cc284fda4dedb24e84c1045136620fd, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 115847
+  packageName: Witch's Camp Environment Kit
+  packageVersion: 1.0
+  assetPath: Assets/2kPixel Studios/Witch's Camp Environment Kit/Models/Nature/Plants/Mushrooms/Floor
+    mushroom 1 - LOD 0.fbx
+  uploadId: 548782

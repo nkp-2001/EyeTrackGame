@@ -1,0 +1,38 @@
+This file gives a brief overview of what each C# script does.
+If you have any questions about what was written, you can contact
+us at our support email, developers@2kpixelstudios.net.
+
+FirstPersonCamera:
+	Enables you to control a camera using basic input from the keyboard and mouse.
+	It needs to have a CharacterController on the same GameObject, and should have
+	a Camera as a child object underneath it.
+
+FlowingCloth:
+	Allows you to animate the external forces on a cloth component to change over time,
+	simulating the effect of wind.
+
+GameManager:
+	Keeps itself and the other manager singleton from being destroyed when new scenes load.
+
+GraphicFader:
+	Fades out a graphic after a given initial delay time in seconds.
+
+PathwayCamera:
+	Given a Transform parent, this component follows the path formed by the children of
+	that Transform (in the order they are shown in the hierarchy), and attempts to
+	slightly curve the path for a smoother effect.
+
+SceneDoor:
+	Manages the state of the doors on the inside and outside of the witch's house.
+	Once the FirstPersonCamera enters its trigger, then this causes a scene change
+	and opens the door with an animation.
+
+SimpleWater:
+	When this component is attached to a Renderer with a Material using the Simple Water
+	shader, this script changes some of the properties of the water Material to make
+	the water appear to be moving slightly on the surface.
+
+UIManager:
+	Manages general UI for the demo scenes, including keeping the screen canvas
+	from destroying when the scene changes, and creating an easier interface into fading
+	in and out the screen fader.

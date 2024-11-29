@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a76f72ed8caa155478d670247fb53423
+timeCreated: 1517708293
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 15600000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 115847
+  packageName: Witch's Camp Environment Kit
+  packageVersion: 1.0
+  assetPath: Assets/2kPixel Studios/Witch's Camp Environment Kit/Demo Scenes/Outside/New
+    Terrain.asset
+  uploadId: 548782

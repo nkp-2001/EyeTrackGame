@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 035c20dddbff49b4bb4c94feae9f41c3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 36300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 115847
+  packageName: Witch's Camp Environment Kit
+  packageVersion: 1.0
+  assetPath: Assets/2kPixel Studios/Witch's Camp Environment Kit/Demo Scenes/Outside/OcclusionCullingData.asset
+  uploadId: 548782

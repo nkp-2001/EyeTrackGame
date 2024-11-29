@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: 724179e44eb47fe4c90e998208b974e4
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bark v2
+    100002: Branches v2
+    100004: Hanging Moss v2
+    100006: //RootNode
+    100008: Vines v2
+    100010: Bark 2 v2 - LOD 0
+    100012: Branches 2 v2 - LOD 0
+    100014: Hanging Moss 2 v2 - LOD 0
+    100016: Vines 2 v2 - LOD 0
+    400000: Bark v2
+    400002: Branches v2
+    400004: Hanging Moss v2
+    400006: //RootNode
+    400008: Vines v2
+    400010: Bark 2 v2 - LOD 0
+    400012: Branches 2 v2 - LOD 0
+    400014: Hanging Moss 2 v2 - LOD 0
+    400016: Vines 2 v2 - LOD 0
+    2100000: Vine
+    2100002: Hanging Moss
+    2100004: Bark
+    2100006: Branches
+    2300000: Bark v2
+    2300002: Branches v2
+    2300004: Hanging Moss v2
+    2300006: Vines v2
+    2300008: Bark 2 v2 - LOD 0
+    2300010: Branches 2 v2 - LOD 0
+    2300012: Hanging Moss 2 v2 - LOD 0
+    2300014: Vines 2 v2 - LOD 0
+    3300000: Bark v2
+    3300002: Branches v2
+    3300004: Hanging Moss v2
+    3300006: Vines v2
+    3300008: Bark 2 v2 - LOD 0
+    3300010: Branches 2 v2 - LOD 0
+    3300012: Hanging Moss 2 v2 - LOD 0
+    3300014: Vines 2 v2 - LOD 0
+    4300000: Vines v2
+    4300002: Hanging Moss v2
+    4300004: Bark v2
+    4300006: Branches v2
+    4300008: Vines 2 v2 - LOD 0
+    4300010: Hanging Moss 2 v2 - LOD 0
+    4300012: Bark 2 v2 - LOD 0
+    4300014: Branches 2 v2 - LOD 0
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bark
+    second: {fileID: 2100000, guid: 655c2d20da46a2b4ba8727bec73905b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branches
+    second: {fileID: 2100000, guid: 04eae925658dd76469f6fc4e06dae023, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hanging Moss
+    second: {fileID: 2100000, guid: 8be1ad8ac8790794cb306f7ab46b12ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vine
+    second: {fileID: 2100000, guid: c2bdb04a857375c48954287e2deb961f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 115847
+  packageName: Witch's Camp Environment Kit
+  packageVersion: 1.0
+  assetPath: Assets/2kPixel Studios/Witch's Camp Environment Kit/Models/Nature/Plants/Trees/Tree
+    2 v2 - LOD 0.fbx
+  uploadId: 548782

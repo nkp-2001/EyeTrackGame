@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 33a7f78a1233c024584ffd0025e3e5f5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 115847
+  packageName: Witch's Camp Environment Kit
+  packageVersion: 1.0
+  assetPath: Assets/2kPixel Studios/Witch's Camp Environment Kit/Prefabs/Structures/Furniture/Bookshelf
+    - Tall (Empty).prefab
+  uploadId: 548782

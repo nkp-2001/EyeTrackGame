@@ -1,0 +1,7 @@
+Thank you so much for purchasing my very first Unity Asset Package!
+This package comprises of 3D models, textures, materials, particle effects
+animations, prefabs and scripts to help you build a murky and mysterious
+interior and exterior Witch's Camp environment.
+
+If you'd like to know what the scripts do, please reference the
+Script Info.txt file for their descriptions.

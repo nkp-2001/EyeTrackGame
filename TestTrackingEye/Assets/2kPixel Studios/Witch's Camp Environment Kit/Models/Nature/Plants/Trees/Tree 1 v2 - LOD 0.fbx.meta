@@ -1,0 +1,214 @@
+fileFormatVersion: 2
+guid: 22053da03b030814d8af8f2143703278
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bark
+    100002: Branches
+    100004: Hanging Moss
+    100006: //RootNode
+    100008: Vines
+    100010: Bark v2
+    100012: Branches v2
+    100014: Hanging Moss v2
+    100016: Vines v2
+    100018: Bark v1
+    100020: Branch 2 - Master
+    100022: Branches v1
+    100024: Hanging Moss - Master
+    100026: Hanging Moss v1
+    100028: Tree 1 v1
+    100030: Tree 1 v2
+    100032: Vines v1
+    100034: Bark 1 v2 - LOD 0
+    100036: Branches 1 v2 - LOD 0
+    100038: Hanging Moss 1 v2 - LOD 0
+    100040: Vines 1 v2 - LOD 0
+    400000: Bark
+    400002: Branches
+    400004: Hanging Moss
+    400006: //RootNode
+    400008: Vines
+    400010: Bark v2
+    400012: Branches v2
+    400014: Hanging Moss v2
+    400016: Vines v2
+    400018: Bark v1
+    400020: Branch 2 - Master
+    400022: Branches v1
+    400024: Hanging Moss - Master
+    400026: Hanging Moss v1
+    400028: Tree 1 v1
+    400030: Tree 1 v2
+    400032: Vines v1
+    400034: Bark 1 v2 - LOD 0
+    400036: Branches 1 v2 - LOD 0
+    400038: Hanging Moss 1 v2 - LOD 0
+    400040: Vines 1 v2 - LOD 0
+    2100000: Hanging Moss
+    2100002: Vine
+    2100004: Branches
+    2100006: Bark
+    2300000: Bark
+    2300002: Branches
+    2300004: Hanging Moss
+    2300006: Vines
+    2300008: Bark v2
+    2300010: Branches v2
+    2300012: Hanging Moss v2
+    2300014: Vines v2
+    2300016: Bark v1
+    2300018: Branch 2 - Master
+    2300020: Branches v1
+    2300022: Hanging Moss - Master
+    2300024: Hanging Moss v1
+    2300026: Vines v1
+    2300028: Bark 1 v2 - LOD 0
+    2300030: Branches 1 v2 - LOD 0
+    2300032: Hanging Moss 1 v2 - LOD 0
+    2300034: Vines 1 v2 - LOD 0
+    3300000: Bark
+    3300002: Branches
+    3300004: Hanging Moss
+    3300006: Vines
+    3300008: Bark v2
+    3300010: Branches v2
+    3300012: Hanging Moss v2
+    3300014: Vines v2
+    3300016: Bark v1
+    3300018: Branch 2 - Master
+    3300020: Branches v1
+    3300022: Hanging Moss - Master
+    3300024: Hanging Moss v1
+    3300026: Vines v1
+    3300028: Bark 1 v2 - LOD 0
+    3300030: Branches 1 v2 - LOD 0
+    3300032: Hanging Moss 1 v2 - LOD 0
+    3300034: Vines 1 v2 - LOD 0
+    4300000: Hanging Moss
+    4300002: Vines
+    4300004: Branches
+    4300006: Bark
+    4300008: Bark v2
+    4300010: Branches v2
+    4300012: Vines v2
+    4300014: Hanging Moss v2
+    4300016: Branches v1
+    4300018: Hanging Moss v1
+    4300020: Vines v1
+    4300022: Bark v1
+    4300024: Hanging Moss - Master
+    4300026: Branch 2 - Master
+    4300028: Hanging Moss 1 v2 - LOD 0
+    4300030: Branches 1 v2 - LOD 0
+    4300032: Bark 1 v2 - LOD 0
+    4300034: Vines 1 v2 - LOD 0
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bark
+    second: {fileID: 2100000, guid: 518b8026f053be945aed129577b54421, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branches
+    second: {fileID: 2100000, guid: 9de31a508503a8747a03cee4d6f478f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hanging Moss
+    second: {fileID: 2100000, guid: 8be1ad8ac8790794cb306f7ab46b12ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vine
+    second: {fileID: 2100000, guid: c2bdb04a857375c48954287e2deb961f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 115847
+  packageName: Witch's Camp Environment Kit
+  packageVersion: 1.0
+  assetPath: Assets/2kPixel Studios/Witch's Camp Environment Kit/Models/Nature/Plants/Trees/Tree
+    1 v2 - LOD 0.fbx
+  uploadId: 548782
