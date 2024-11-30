@@ -14,12 +14,15 @@ public class HightLight : MonoBehaviour
 
     EyeTrackTest eyeTrackTest;
 
+    [SerializeField] GameObject Ignore;
+
     private void Start()
     {
         meshRenderers = GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer MS in meshRenderers)
-        {
+        {       
             defaultMaterialList.Add(MS.materials);
+            
         }
         eyeTrackTest = FindAnyObjectByType<EyeTrackTest>();
     }
@@ -74,7 +77,11 @@ public class HightLight : MonoBehaviour
             {
                 foreach (MeshRenderer MS in meshRenderers)
                 {
-                    MS.material = highlightMaterial;
+                    if(MS.gameObject == Ignore)
+                    {
+                        MS.material = highlightMaterial;
+                    }
+                   
                 }
                 
             }
