@@ -53,7 +53,7 @@ public class HightLight : MonoBehaviour
     {
         if (hit.collider.transform == transform & !hightlight)
         {
-            print("--- HightLighting");
+         
             HightLighting();
         }
         if (!(hit.collider.transform == transform) & hightlight)

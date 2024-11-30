@@ -16,5 +16,9 @@ public class CodeEventHandler : MonoBehaviour
 
     public static void Trigger_BasicSelection(int value) { BasicSelection?.Invoke(value); }
 
+    public static event Action<bool> SelectionSetBlock;
+
+    public static void Trigger_SelectionSetBlock(bool on) { SelectionSetBlock?.Invoke(on); }
+
 
 }
