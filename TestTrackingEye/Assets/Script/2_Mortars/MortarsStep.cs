@@ -34,6 +34,7 @@ public class MortarsStep : StepGameHandler
 
 
     }
+  
 
     private void OnEnable()
     {
@@ -47,7 +48,7 @@ public class MortarsStep : StepGameHandler
     }
     override public void EndStep()
     {
-        step = new RecipeStep(true, score); // Secound Argument Errors
+        step = new RecipeStep(true, score + stepsToDO*2); // Secound Argument Errors and *2 of missed Times
         CodeEventHandler.Trigger_NextStepInRecipe(step);
     }
 
@@ -102,7 +103,7 @@ public class MortarsStep : StepGameHandler
     }
     private void Update()
     {
-        /*
+        
         time -= Time.deltaTime;
         TimeIndiactor.transform.localScale = new Vector3(time / maxTime, TimeIndiactor.transform.localScale.y, TimeIndiactor.transform.localScale.z);
 
@@ -110,7 +111,7 @@ public class MortarsStep : StepGameHandler
         {
            EndStep();
         }
-        */
+        
     }
     public void SetBlock(bool on)
     {

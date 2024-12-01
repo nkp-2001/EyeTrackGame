@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  maxTime: 10
+  maxTime: 50
   time: 0
   TimeIndiactor: {fileID: 1511304074}
   mortalShuffle: {fileID: 731738731}
