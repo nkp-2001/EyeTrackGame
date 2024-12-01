@@ -11,6 +11,7 @@ public class MortalShuffle : MonoBehaviour
     [SerializeField] GameObject pistill;
     [SerializeField] GameObject bowl;
     int[] possibleMove = new int[4] {1, 3, -1, - 3};
+    int[] rotateConst = new int[4] { 90, 180, -90, -180 };
 
     [SerializeField] float duration = 1.25f;
 
@@ -43,9 +44,7 @@ public class MortalShuffle : MonoBehaviour
     public void Shuffle()
     {     
         Vector2 newPostions = GenerateNewPostions();
-        bowl.transform.SetParent(ankers[(int)newPostions.x]);
-        pistill.transform.SetParent(ankers[(int)newPostions.y]);
-
+       
         // Reset
         foreach (SelectOnTime i in Selector)
         {
@@ -55,35 +54,39 @@ public class MortalShuffle : MonoBehaviour
         Selector[(int)newPostions.y].SetValue(1);
         Selector[(int)newPostions.x].SetValue(2);
 
-        StartCoroutine(MoveBothObject());
+        StartCoroutine(MoveBothObject(ankers[(int)newPostions.x].position, ankers[(int)newPostions.y].position));
 
 
     }
-    public IEnumerator MoveBothObject()
+    public IEnumerator MoveBothObject(Vector3 bowlNewPos,Vector3 pistillNewPos)
     {
-        StartCoroutine(MoveToLocalPositionZero(bowl.transform, pistill.transform, duration));
-        StartCoroutine(MoveToLocalPositionZero(pistill.transform, bowl.transform, duration));
+        StartCoroutine(MoveToLocalPositionZero(bowl.transform, bowlNewPos, pistillNewPos, duration));
+        StartCoroutine(MoveToLocalPositionZero(pistill.transform, pistillNewPos, bowlNewPos, duration));
         yield return new WaitForSeconds(duration);
         CodeEventHandler.Trigger_SelectionSetBlock(true);
     }
 
 
-    private IEnumerator MoveToLocalPositionZero(Transform child, Transform targetRot, float duration)
+    private IEnumerator MoveToLocalPositionZero(Transform child, Vector3 targetPostion,Vector3 targetOfPair, float duration)
     {
-        Vector3 startPosition = child.localPosition;
-        Quaternion startRotation = child.localRotation;
+        Vector3 startPosition = child.position;
+        Quaternion startRotation = child.rotation;
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            child.localPosition = Vector3.Lerp(startPosition, Vector3.zero, elapsed / duration);
+            child.localPosition = Vector3.Lerp(startPosition, targetPostion, elapsed / duration);
 
-            // child.rotation = Quaternion.Slerp(startRotation, Quaternion.LookRotation(targetRot.position - child.transform.position), elapsed / duration);
+            Vector3 directionToTarget = targetOfPair - child.position;
+            Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+            child.rotation = Quaternion.Lerp(startRotation, targetRotation, elapsed / duration);
+
 
             yield return null;
         }
+        child.position = targetPostion;
+        child.LookAt(targetOfPair);
 
-        child.localPosition = Vector3.zero; 
     }
 }
