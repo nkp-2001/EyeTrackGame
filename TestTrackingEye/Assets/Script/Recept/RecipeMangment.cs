@@ -76,6 +76,10 @@ public class RecipeMangment : MonoBehaviour
         CodeEventHandler.StartBrewing -= StartSystem;
         CodeEventHandler.NextStepInRecipe -= RecordAndNextStep;
     }
+    public RecipeStep GetCurrentStepData()
+    {
+        return recipeSteps[step];
+    }
 
 
 }

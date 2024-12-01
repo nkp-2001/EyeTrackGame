@@ -828,6 +828,7 @@ GameObject:
   - component: {fileID: 1023809200}
   - component: {fileID: 1023809199}
   - component: {fileID: 1023809198}
+  - component: {fileID: 1023809203}
   m_Layer: 0
   m_Name: TakeRecorder
   m_TagString: Untagged
@@ -993,6 +994,14 @@ PlayableDirector:
   m_ExposedReferences:
     m_References:
     - SampleHead_v.007: {fileID: 0}
+--- !u!81 &1023809203
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023809196}
+  m_Enabled: 1
 --- !u!1 &1092209587
 GameObject:
   m_ObjectHideFlags: 0
