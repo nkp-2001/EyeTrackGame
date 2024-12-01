@@ -11,6 +11,8 @@ public class ShuffleFlowers : MonoBehaviour
 
     [SerializeField] float switchtingSpeed = 2;
 
+    [SerializeField] bool ThreeDMode = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,7 +31,15 @@ public class ShuffleFlowers : MonoBehaviour
         yield return new WaitForSeconds(2);
         foreach (FlowerNumber child in children)
         {
-            child.GetComponent<SpriteRenderer>().color = Color.white;
+            if (ThreeDMode)
+            {
+                child.GetComponent<MeshRenderer>().enabled = true;
+            }
+            else
+            {
+                child.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+           
         }
         for(int i = 0; i < 3; i++)
         {
