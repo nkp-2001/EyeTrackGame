@@ -13,5 +13,5 @@ public class SoSelectRightStep : SoRecipeStep
 }
 public enum Flowers
 {
-    Purple, Red, White, Three_Yellow, Blue, Dark_Purple
+    Red_Flowers, White_Flowers, Pink_Flower, Light_Blue_Flowers, Green_Flowers, Mushroom
 }

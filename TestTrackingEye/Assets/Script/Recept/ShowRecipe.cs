@@ -17,6 +17,7 @@ public class ShowRecipe : MonoBehaviour
         {
             InstructionText.text += ("#" + (i+1) + instructionlist[i]) +"\n";
         }
+        InstructionText.text = InstructionText.text.Replace("_", " ");
 
     }
 
