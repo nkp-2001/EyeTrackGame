@@ -15,3 +15,4 @@ MonoBehaviour:
   value: 4
   instruction: Mortals {0} times
   sceneIndex: 5
+  errorBased: 1

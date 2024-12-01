@@ -24,11 +24,11 @@ public class MortarsStep : StepGameHandler
         RecipeMangment recipeMangment = FindAnyObjectByType<RecipeMangment>();
         if(recipeMangment != null)
         {
-          //  stepsToDO = recipeMangment.
+            stepsToDO = recipeMangment.GetCurrentStepData().Value;
         }
         else
         {
-           // stepsToDO = 3; 
+           stepsToDO = 3; // FallBack
         }
       
 
@@ -47,7 +47,7 @@ public class MortarsStep : StepGameHandler
     }
     override public void EndStep()
     {
-        step = new RecipeStep(score);
+        step = new RecipeStep(true, score); // Secound Argument Errors
         CodeEventHandler.Trigger_NextStepInRecipe(step);
     }
 
