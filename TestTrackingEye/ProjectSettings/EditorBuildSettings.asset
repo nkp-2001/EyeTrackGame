@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/1_Menu.unity
-    guid: 23f77ee06b34742b6bdcf349d2d0faf1
+    guid: 83f9b3c1d63a54a41a82060596af5af0
   - enabled: 1
     path: Assets/Scenes/2_Intro.unity
     guid: 04b199de2a23e45bba197e2e3bd5297a
@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/OldScenes/GYM_Waldo.unity
     guid: 667461870c16e94459a827c06b051d5e
   - enabled: 1
+    path: Assets/Scenes/BrewSteps/PickFlower3D.unity
+    guid: 800e2c4e4959f914a9c83b18ba5b6c66
+  - enabled: 0
     path: Assets/Scenes/BrewSteps/PickFlower.unity
     guid: baf1f886094ad9d489f8b3c722cfe15f
   - enabled: 1
