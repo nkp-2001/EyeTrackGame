@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Recipe_1
   m_EditorClassIdentifier: 
   recipeSteps:
-  - {fileID: 11400000, guid: 959301fa0f06fff43a41e003444cbd8c, type: 2}
   - {fileID: 11400000, guid: e29fb6fda133a9245b8b08aa7310fea9, type: 2}
+  - {fileID: 11400000, guid: 959301fa0f06fff43a41e003444cbd8c, type: 2}
   - {fileID: 11400000, guid: 33c06ad04df9b9642a10bbcaf7b4f54a, type: 2}

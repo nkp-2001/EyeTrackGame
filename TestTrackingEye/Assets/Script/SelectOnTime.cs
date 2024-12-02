@@ -13,6 +13,8 @@ public class SelectOnTime : MonoBehaviour
     bool lookedAT = false;
     bool lookedATAfterSelected = false;
 
+    public float TimeToSelect { get => timeToSelect; set => timeToSelect = value; }
+
     private void Start()
     {
         eyeTrackTest = FindAnyObjectByType<EyeTrackTest>();
