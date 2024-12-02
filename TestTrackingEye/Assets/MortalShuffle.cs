@@ -15,7 +15,7 @@ public class MortalShuffle : MonoBehaviour
 
     [SerializeField] float duration = 1.25f;
 
-  
+    int lastValue = -1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +28,14 @@ public class MortalShuffle : MonoBehaviour
     }
     private Vector2 GenerateNewPostions()
     {
-        int bowlPostion = Random.Range(0, ankers.Count);
+        int randomValue;
+        do
+        {
+           randomValue = Random.Range(0, ankers.Count);
+        } while (randomValue == lastValue);
+
+
+        int bowlPostion = randomValue;
         int offsetPistfull = possibleMove[Random.Range(0, possibleMove.Length)];
         int pifulPostion = bowlPostion + offsetPistfull;
 
