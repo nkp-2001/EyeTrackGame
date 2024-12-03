@@ -23,6 +23,7 @@ public class SelectOnTime : MonoBehaviour
 
     private void Update()
     {
+       
         if (eyeTrackTest != null)
         {
             Ray gazeRay = eyeTrackTest.GetRayCast();
@@ -62,7 +63,9 @@ public class SelectOnTime : MonoBehaviour
                 
                 if(!(blockedMode && lookedATAfterSelected))
                 {
+                    
                     CodeEventHandler.Trigger_BasicSelection(myValue);
+                    Debug.Log($"Field {myValue} selected.");
                 }
                
                 lookedATAfterSelected = true;
