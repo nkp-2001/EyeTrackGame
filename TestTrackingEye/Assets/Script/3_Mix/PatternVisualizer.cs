@@ -20,40 +20,51 @@ public class PatternVisualizer : MonoBehaviour
     {
         isShowingPattern = true; // Musteranzeige starten
 
+        // Alle Marker zurücksetzen
+        ResetMarkers();
+
         // Arbeite mit einer Kopie der Liste
         List<int> patternCopy = new List<int>(pattern);
 
-        foreach (int index in patternCopy)
+        for (int i = 0; i < patternCopy.Count; i++)
         {
-            HighlightField(index);
+            int index = patternCopy[i];
+
+            // Aktiviert den entsprechenden Marker (z. B. 1., 2., ...)
+ 
+            ActivateMarker(index, i);
+
             yield return new WaitForSeconds(highlightDuration);
         }
 
         yield return new WaitForSeconds(highlightDuration);
-        //ResetAllFields(); // Setze das Material zurück
         isShowingPattern = false; // Musteranzeige beenden
     }
 
+    
 
-    private void HighlightField(int index)
+    private void ActivateMarker(int gridIndex, int markerIndex)
     {
-        // Ändere das Material des MeshRenderers
-        MeshRenderer renderer = gridFields[index].GetComponent<MeshRenderer>();
-        if (renderer != null)
+        // Hole das Grid-Feld
+        GameObject gridField = gridFields[gridIndex];
+
+        // Prüfe, ob das Grid-Feld 4 Child-Objekte hat
+        if (gridField.transform.childCount >= markerIndex + 1)
         {
-            renderer.material = highlightMaterial;
+            // Aktiviere das entsprechende Child-Objekt
+            Transform marker = gridField.transform.GetChild(markerIndex);
+            marker.gameObject.SetActive(true);
         }
     }
 
-    private void ResetAllFields()
+    private void ResetMarkers()
     {
+        // Setze alle Marker in allen Grid-Feldern zurück
         foreach (GameObject field in gridFields)
         {
-            if (field == null) continue; // Überspringe null-Felder
-            MeshRenderer renderer = field.GetComponent<MeshRenderer>();
-            if (renderer != null)
+            for (int i = 0; i < field.transform.childCount; i++)
             {
-                renderer.material = defaultMaterial;
+                field.transform.GetChild(i).gameObject.SetActive(false);
             }
         }
     }

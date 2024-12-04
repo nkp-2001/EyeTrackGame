@@ -42,7 +42,7 @@ public class HightLight : MonoBehaviour
             {
                 if (hightlight)
                 {
-                    UnHightLighting();
+                   UnHightLighting();
                 }
             }
         }

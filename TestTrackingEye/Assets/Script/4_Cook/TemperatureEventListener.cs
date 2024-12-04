@@ -8,8 +8,8 @@ public class TemperatureEventListener : StepGameHandler
     public float selectionTimer = 0f; // Z‰hlt die Zeit seit der letzten Auswahl
     public float timeOutsideOptimal = 0f; // Zeit auﬂerhalb des optimalen Bereichs
     public float timeInsideOptimal = 0f; // Zeit innerhalb des optimalen Bereichs
-    public const float penaltyTime = 5f; // Zeit, nach der auﬂerhalb des Bereichs ein Punkt abgezogen wird
-    public const float successTime = 10f; // Zeit, die im optimalen Bereich verbracht werden muss, um zu gewinnen
+    public const float penaltyTime = 10f; // Zeit, nach der auﬂerhalb des Bereichs ein Punkt abgezogen wird
+    public const float successTime = 13f; // Zeit, die im optimalen Bereich verbracht werden muss, um zu gewinnen
     public bool iswinning;
 
     private void Start()

@@ -2,14 +2,24 @@ using UnityEngine;
 
 public class ParticleIndicator : MonoBehaviour
 {
-    Animator animator;
-    ParticleSystem ParticleSystem;
+    public Animator animator;
+    public ParticleSystem ParticleSystem;
 
     private void Start()
     {
-        ParticleSystem = transform.GetChild(0).GetComponent<ParticleSystem>();
         animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogError("Animator not found on object: " + gameObject.name);
+        }
+
+        ParticleSystem = transform.GetChild(0)?.GetComponent<ParticleSystem>();
+        if (ParticleSystem == null)
+        {
+            Debug.LogError("ParticleSystem not found as child of: " + gameObject.name);
+        }
     }
+
     public void StartEffect()
     {
         animator.SetBool("Active", true);

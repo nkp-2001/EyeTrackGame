@@ -18,7 +18,8 @@ public class PotionEvalation : MonoBehaviour
         for (int i = 0; i < mangment.playerPerformanceSteps.Count ; i++)
         {
             float value = playerPerformanceSteps[i].EvaluateCompareStep(RecipeSteps[i]);
-            text.text += "\n " + value;
+            string[] descriptions = { "Correctly pick a flower", "Grind the ingredients", "Stir correctly", "Properly boil" };
+            text.text += "\n" + descriptions[i] + ": " + value;
         }
 
        

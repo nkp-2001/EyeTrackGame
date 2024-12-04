@@ -11,6 +11,11 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("2_Intro");
     }
 
+    public void backMenu()
+    {
+        SceneManager.LoadScene("1_Menu");
+    }
+
     public void ShowCredits()
     {
         credits.SetActive(true);

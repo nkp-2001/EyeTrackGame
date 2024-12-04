@@ -9,6 +9,7 @@ public class PatternMatchStep : StepGameHandler
     public int currentIndex = 0;
     public int stepsToDO;
 
+
     private void Start()
     {
         RecipeMangment recipeMangment = FindAnyObjectByType<RecipeMangment>();
@@ -21,6 +22,7 @@ public class PatternMatchStep : StepGameHandler
             stepsToDO = 1; // FallBack
         }
     }
+
     private void OnEnable()
     {
         // Registriere das Event
@@ -57,6 +59,10 @@ public class PatternMatchStep : StepGameHandler
         if (selectedValue == currentPattern[currentIndex])
         {
             currentIndex++;
+
+            // Marker beim ausgewählten Feld deaktivieren
+            DeactivateMarker(selectedValue);
+
             Debug.Log($"Correct! CurrentIndex: {currentIndex}");
 
             if (currentIndex >= currentPattern.Count)
@@ -64,7 +70,7 @@ public class PatternMatchStep : StepGameHandler
                 stepsToDO--;
 
                 Debug.Log("Pattern successfully matched!");
-                
+
                 if (stepsToDO <= 0)
                 {
                     EndStep();
@@ -83,7 +89,35 @@ public class PatternMatchStep : StepGameHandler
             if (patternVisualizer != null)
             {
                 score++;
+
+                // Alle Marker wieder sichtbar machen
+                ResetAllMarkers();
+
                 patternVisualizer.ShowPattern();
+            }
+        }
+    }
+
+    private void DeactivateMarker(int selectedValue)
+    {
+        // Hole das Grid-Feld anhand der ID
+        GameObject field = patternVisualizer.gridFields[selectedValue];
+
+        // Deaktiviere alle Marker im Grid-Feld
+        for (int i = 0; i < field.transform.childCount; i++)
+        {
+            field.transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    private void ResetAllMarkers()
+    {
+        // Setze alle Marker in allen Grid-Feldern zurück
+        foreach (GameObject field in patternVisualizer.gridFields)
+        {
+            for (int i = 0; i < field.transform.childCount; i++)
+            {
+                field.transform.GetChild(i).gameObject.SetActive(true);
             }
         }
     }
