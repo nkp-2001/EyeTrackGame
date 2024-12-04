@@ -872,11 +872,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876fe95808ed326499c75242f257c45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToSelect: 0.05
-  currentSelctedTime: 5
+  timeToSelect: 1
+  currentSelctedTime: 1
   myValue: 1
   TimeIndiactor: {fileID: 0}
   blockedMode: 0
+  TotalBlock: 0
 --- !u!114 &697194049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2352,11 +2353,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876fe95808ed326499c75242f257c45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToSelect: 2
-  currentSelctedTime: 2
+  timeToSelect: 1
+  currentSelctedTime: 1
   myValue: 0
   TimeIndiactor: {fileID: 0}
   blockedMode: 0
+  TotalBlock: 0
 --- !u!1 &1879730949
 GameObject:
   m_ObjectHideFlags: 0

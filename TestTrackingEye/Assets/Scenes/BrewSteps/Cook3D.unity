@@ -1025,10 +1025,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToSelect: 0.05
-  currentSelctedTime: 5
+  currentSelctedTime: 1
   myValue: 0
   TimeIndiactor: {fileID: 0}
   blockedMode: 1
+  TotalBlock: 0
 --- !u!114 &697194049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,6 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: a1bf3e035abd8e3488aec0af70269eb3, type: 2}
   onlyparent: 1
+  Ignore: {fileID: 0}
 --- !u!65 &697194050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2154,6 +2156,11 @@ MonoBehaviour:
   maxTime: 10
   time: 0
   TimeIndiactor: {fileID: 1511304074}
+  mortalShuffle: {fileID: 0}
+  stepsToDO: 3
+  selectFirstField: 1
+  succesSound: {fileID: 0}
+  failSound: {fileID: 0}
 --- !u!1 &1404267463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,6 +2803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: a1bf3e035abd8e3488aec0af70269eb3, type: 2}
   onlyparent: 1
+  Ignore: {fileID: 0}
 --- !u!65 &1801470517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2883,10 +2891,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToSelect: 0.05
-  currentSelctedTime: 5
+  currentSelctedTime: 1
   myValue: 0
   TimeIndiactor: {fileID: 0}
   blockedMode: 1
+  TotalBlock: 0
 --- !u!114 &1801470521
 MonoBehaviour:
   m_ObjectHideFlags: 0

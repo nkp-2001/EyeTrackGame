@@ -28,7 +28,9 @@ public class ShuffleFlowers : MonoBehaviour
     }
     IEnumerator SwitchTreeTimes()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(6);
+
+
         foreach (FlowerNumber child in children)
         {
             if (ThreeDMode)

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mortals
   m_EditorClassIdentifier: 
   value: 4
-  instruction: Mortals {0} times
+  instruction: Look first at Pitfull and Bowl
   sceneIndex: 5
   errorBased: 1
