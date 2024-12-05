@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 
@@ -7,8 +8,9 @@ public class RecipeStep
     protected int value = -1;
 
     public int errors = 0;
-
     bool errorBased = false;
+
+    public float errorWeight = 0.1f;
 
     protected string instruction = "Null";
 
@@ -21,12 +23,13 @@ public class RecipeStep
         this.instruction = instruction;
         SetInstruction();
     }
-    public RecipeStep(int value, string instruction, int sceneIndex,bool errorBased)
+    public RecipeStep(int value, string instruction, int sceneIndex,bool errorBased,float errorWeight)
     {
         this.value = value;
         this.nextsceneIndex = sceneIndex;
         this.instruction = instruction;
         this.errorBased = errorBased;
+        this.errorWeight = errorWeight; 
         SetInstruction();
     }
     public RecipeStep(int value)
@@ -53,7 +56,7 @@ public class RecipeStep
         float result = 1;
         if (errorBased)
         {           
-            result = (1 - (errors * 0.15f));
+            result = (1 - (errors * errorWeight));
         }
         else
         {

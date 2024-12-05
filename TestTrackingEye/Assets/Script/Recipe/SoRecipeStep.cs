@@ -8,11 +8,12 @@ public class SoRecipeStep : ScriptableObject
    public string instruction = "Do X";
    public int sceneIndex = -1;
    public bool errorBased = false;
+    public float errorWeight = 0.1f;
    
 
     virtual public RecipeStep CreateRecipeStepObject()
     {
-        return new RecipeStep(value, instruction, sceneIndex, errorBased);
+        return new RecipeStep(value, instruction, sceneIndex, errorBased, errorWeight);
     }
 
 
