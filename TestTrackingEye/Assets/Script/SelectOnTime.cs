@@ -25,10 +25,12 @@ public class SelectOnTime : MonoBehaviour
 
     private void Update()
     {
-        if (TotalBlock)
+        if (!TotalBlock)
         {
+          
             if (eyeTrackTest != null)
             {
+              
                 Ray gazeRay = eyeTrackTest.GetRayCast();
                 RaycastHit hit;
 
