@@ -6,6 +6,8 @@ public class TemperatureController : MonoBehaviour
     [Header("UI Components")]
     public Slider temperatureSlider; // Der UI-Slider, der die aktuelle Temperatur anzeigt
     public Image sliderFill; // Das Bild, das die Füllfarbe des Sliders anzeigt
+    public RectTransform optimalMinIndicator; // Indikator für den unteren Bereich
+    public RectTransform optimalMaxIndicator; // Indikator für den oberen Bereich
 
     [Header("Temperature Settings")]
     public float minTemperature = 0f; // Minimale Temperatur
@@ -13,6 +15,8 @@ public class TemperatureController : MonoBehaviour
     public float optimalMin = 40f; // Untere Grenze des optimalen Bereichs
     public float optimalMax = 60f; // Obere Grenze des optimalen Bereichs
     public float temperatureChangeSpeed = 20f; // Geschwindigkeit, mit der sich die Temperatur ändert
+    public float temperatureAutoChangeSpeed = 0.005f; // Geschwindigkeit, mit der sich die Temperatur automatisch ändert
+
 
     public float currentTemperature; // Aktuelle Temperatur
     private bool isIncreasing = false; // Gibt an, ob die Temperatur gerade steigt
@@ -21,14 +25,17 @@ public class TemperatureController : MonoBehaviour
     void Start()
     {
         // Initialisiere die Temperatur auf 0 und setze die Slider-Werte
-        currentTemperature = minTemperature; // Temperatur beginnt bei 0
+        currentTemperature = 50f; // Temperatur beginnt bei der hälfte
         temperatureSlider.minValue = minTemperature;
         temperatureSlider.maxValue = maxTemperature;
         UpdateSlider(); // Aktualisiere die UI-Anzeige
+        UpdateIndicators(); // Positioniere die Indikatoren
     }
 
     void Update()
     {
+        currentTemperature -= temperatureAutoChangeSpeed * Time.deltaTime;
+
         // Temperatur basierend auf den Eingaben erhöhen oder verringern
         if (isIncreasing)
         {
@@ -73,4 +80,25 @@ public class TemperatureController : MonoBehaviour
     {
         temperatureSlider.value = currentTemperature;
     }
+
+    // Aktualisiere die Position der Indikatoren
+    private void UpdateIndicators()
+    {
+        float sliderHeight = temperatureSlider.GetComponent<RectTransform>().sizeDelta.y;
+
+        if (optimalMinIndicator != null)
+        {
+            // Berechne die Y-Position für optimalMin in Prozent relativ zur Slider-Höhe
+            float minPercent = (optimalMin - minTemperature) / (maxTemperature - minTemperature);
+            optimalMinIndicator.anchoredPosition = new Vector2(optimalMinIndicator.anchoredPosition.x, sliderHeight * minPercent);
+        }
+
+        if (optimalMaxIndicator != null)
+        {
+            // Berechne die Y-Position für optimalMax in Prozent relativ zur Slider-Höhe
+            float maxPercent = (optimalMax - minTemperature) / (maxTemperature - minTemperature);
+            optimalMaxIndicator.anchoredPosition = new Vector2(optimalMaxIndicator.anchoredPosition.x, sliderHeight * maxPercent);
+        }
+    }
 }
+ 

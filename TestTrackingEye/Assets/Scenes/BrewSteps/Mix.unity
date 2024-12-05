@@ -835,6 +835,7 @@ MonoBehaviour:
   myValue: 0
   TimeIndiactor: {fileID: 1477881410}
   blockedMode: 1
+  TotalBlock: 0
 --- !u!114 &134333132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3697,6 +3698,7 @@ MonoBehaviour:
   myValue: 2
   TimeIndiactor: {fileID: 1135956192}
   blockedMode: 1
+  TotalBlock: 0
 --- !u!114 &661698233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3858,6 +3860,7 @@ MonoBehaviour:
   myValue: 1
   TimeIndiactor: {fileID: 230239144}
   blockedMode: 1
+  TotalBlock: 0
 --- !u!114 &680207186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4324,6 +4327,7 @@ MonoBehaviour:
   myValue: 6
   TimeIndiactor: {fileID: 977118177}
   blockedMode: 1
+  TotalBlock: 0
 --- !u!114 &732448003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8503,6 +8507,7 @@ MonoBehaviour:
   myValue: 3
   TimeIndiactor: {fileID: 1215902871}
   blockedMode: 1
+  TotalBlock: 0
 --- !u!114 &1318491199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10270,6 +10275,7 @@ MonoBehaviour:
   myValue: 7
   TimeIndiactor: {fileID: 1351847361}
   blockedMode: 1
+  TotalBlock: 0
 --- !u!114 &1575912749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10914,7 +10920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1673659083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11408,6 +11414,7 @@ MonoBehaviour:
   myValue: 5
   TimeIndiactor: {fileID: 1792070891}
   blockedMode: 1
+  TotalBlock: 0
 --- !u!114 &1735977547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12823,6 +12830,7 @@ MonoBehaviour:
   myValue: 4
   TimeIndiactor: {fileID: 1704763804}
   blockedMode: 1
+  TotalBlock: 0
 --- !u!114 &1944819390
 MonoBehaviour:
   m_ObjectHideFlags: 0

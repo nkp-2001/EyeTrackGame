@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class PatternMatchStep : StepGameHandler
 {
@@ -106,8 +107,33 @@ public class PatternMatchStep : StepGameHandler
         // Deaktiviere alle Marker im Grid-Feld
         for (int i = 0; i < field.transform.childCount; i++)
         {
-            field.transform.GetChild(i).gameObject.SetActive(false);
+            GameObject child = field.transform.GetChild(i).gameObject;
+            StartCoroutine(FadeOutAndDeactivate(child));
         }
+    }
+
+    private IEnumerator FadeOutAndDeactivate(GameObject obj)
+    {
+        Renderer renderer = obj.GetComponent<Renderer>();
+        if(renderer != null)
+        {
+            Material material = renderer.material;
+            Color color = material.color;
+            float duration = 1f;
+            float elapsed = 0f;
+
+            while(elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
+                material.color = new Color(color.r, color.g, color.b, alpha);
+                yield return null;
+            }
+
+            material.color = new Color(color.r, color.g, color.b, 0f);
+        }
+
+        obj.SetActive(false);
     }
 
     private void ResetAllMarkers()
