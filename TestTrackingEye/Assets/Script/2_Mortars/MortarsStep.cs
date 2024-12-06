@@ -63,12 +63,12 @@ public class MortarsStep : StepGameHandler
                 {
                     print("----------------Seleced");
                     selectFirstField = false;
-                    AudioSource.PlayClipAtPoint(succesSound,transform.position,1);
+                    AudioSource.PlayClipAtPoint(succesSound,transform.position,0.5f);
                 }
                 else
                 {
                     score++; // FAIL Score Increase
-                    AudioSource.PlayClipAtPoint(failSound, transform.position, 1);
+                    AudioSource.PlayClipAtPoint(failSound, transform.position, 0.5f);
                 }
             }
             else
