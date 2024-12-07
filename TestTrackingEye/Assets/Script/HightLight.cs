@@ -16,6 +16,11 @@ public class HightLight : MonoBehaviour
 
     [SerializeField] GameObject Ignore;
 
+
+    public bool totalBlock;
+
+    public bool TotalBlock { get => totalBlock; set => totalBlock = value; }
+
     private void Start()
     {
         meshRenderers = GetComponentsInChildren<MeshRenderer>();
@@ -30,21 +35,25 @@ public class HightLight : MonoBehaviour
     {
         if (eyeTrackTest != null)
         {
-            Ray gazeRay = eyeTrackTest.GetRayCast();
-            RaycastHit hit;
-
-            if (Physics.Raycast(gazeRay, out hit))
-            {         
-                CheckRaycast(hit);
-
-            }
-            else
+            if (!totalBlock)
             {
-                if (hightlight)
+                Ray gazeRay = eyeTrackTest.GetRayCast();
+                RaycastHit hit;
+
+                if (Physics.Raycast(gazeRay, out hit))
                 {
-                   UnHightLighting();
+                    CheckRaycast(hit);
+
+                }
+                else
+                {
+                    if (hightlight)
+                    {
+                        UnHightLighting();
+                    }
                 }
             }
+            
         }
         else
         {

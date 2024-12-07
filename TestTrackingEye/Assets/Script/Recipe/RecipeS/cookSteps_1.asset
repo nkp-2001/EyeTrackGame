@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: cookSteps_1
   m_EditorClassIdentifier: 
   value: 1
-  instruction: Keep temperature green {0} times. Hold Button to change Tempartur.
-  sceneIndex: 7
+  instruction: Keep temperature green Area. Hold Look to change Tempartur.
+  sceneIndex: 6
   errorBased: 1
+  errorWeight: 0.1

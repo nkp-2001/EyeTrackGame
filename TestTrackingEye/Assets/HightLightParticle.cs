@@ -10,6 +10,10 @@ public class HightLightParticle : MonoBehaviour
 
     SelectOnTime selectOnTime;
 
+    public bool totalBlock;
+
+    public bool TotalBlock { get => totalBlock; set => totalBlock = value; }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {  
@@ -23,21 +27,26 @@ public class HightLightParticle : MonoBehaviour
     {
         if (eyeTrackTest != null)
         {
-            Ray gazeRay = eyeTrackTest.GetRayCast();
-            RaycastHit hit;
-
-            if (Physics.Raycast(gazeRay, out hit))
+            if (!totalBlock)
             {
-                CheckRaycast(hit);
 
-            }
-            else
-            {
-                if (hightlight)
+                Ray gazeRay = eyeTrackTest.GetRayCast();
+                RaycastHit hit;
+
+                if (Physics.Raycast(gazeRay, out hit))
                 {
-                    UnHightLighting();
+                    CheckRaycast(hit);
+
+                }
+                else
+                {
+                    if (hightlight)
+                    {
+                        UnHightLighting();
+                    }
                 }
             }
+           
         }
         else
         {

@@ -12,7 +12,7 @@ public class ShowRecipe : MonoBehaviour
     {
         time = Maxtime;
 
-        var instructionlist = FindFirstObjectByType<RecipeMangment>().GetStepsInstrcution();
+        var instructionlist = FindFirstObjectByType<RecipeMangment>().GetAllStepsInstrcutions();
         for (int i = 0; i < instructionlist.Count; i++)
         {
             InstructionText.text += ("#" + (i+1) + instructionlist[i]) +"\n";

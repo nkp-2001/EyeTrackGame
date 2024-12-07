@@ -37,10 +37,9 @@ public class RecipeMangment : MonoBehaviour
 
     public void GetSteps(Recipe recipe)
     {
-
         recipeSteps = recipe.GetRecipeSteps();
     }
-    public List<string> GetStepsInstrcution()
+    public List<string> GetAllStepsInstrcutions()
     {
         List<string> instruction = new List<string>(); ;
         foreach(RecipeStep step in recipeSteps)

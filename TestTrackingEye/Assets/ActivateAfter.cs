@@ -5,7 +5,6 @@ public class ActivateAfter : MonoBehaviour
 {
 
     [SerializeField] float time;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(ShowAfter());
@@ -13,6 +12,24 @@ public class ActivateAfter : MonoBehaviour
     IEnumerator ShowAfter()
     {
         yield return new WaitForSeconds(time);
-        GetComponent<SelectOnTime>().TotalBlock = false;
+        SelectOnTime selectOnTime = GetComponent<SelectOnTime>();
+        if (selectOnTime != null)
+        {
+            selectOnTime.TotalBlock = false;
+        }
+
+        
+        HightLight hightLight = GetComponent<HightLight>();
+        if (hightLight != null)
+        {
+            hightLight.TotalBlock = false;
+        }
+
+        HightLightParticle particleIndicator = GetComponent<HightLightParticle>();
+        if (particleIndicator != null)
+        {
+            particleIndicator.TotalBlock = false;
+        }
+
     }
 }

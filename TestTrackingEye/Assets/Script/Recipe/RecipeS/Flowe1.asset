@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d49cbbc2ff6a084f94d5f976ae27e7b, type: 3}
   m_Name: Flowe1
   m_EditorClassIdentifier: 
-  flower: 0
-  instruction: Pick {0}
+  value: -1
+  instruction: Pick the {0}
   sceneIndex: 4
+  errorBased: 0
+  errorWeight: 0.1
+  flower: 0

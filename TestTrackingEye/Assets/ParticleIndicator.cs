@@ -5,6 +5,7 @@ public class ParticleIndicator : MonoBehaviour
     public Animator animator;
     public ParticleSystem ParticleSystem;
 
+
     private void Start()
     {
         animator = GetComponent<Animator>();

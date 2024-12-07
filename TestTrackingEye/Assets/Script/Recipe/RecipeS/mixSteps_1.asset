@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: mixSteps_1
   m_EditorClassIdentifier: 
   value: 1
-  instruction: 'Patch The Pattern. Look a certain times to select. '
-  sceneIndex: 6
+  instruction: Match the Patten. Look long enough to select.
+  sceneIndex: 8
   errorBased: 1
+  errorWeight: 0.1
