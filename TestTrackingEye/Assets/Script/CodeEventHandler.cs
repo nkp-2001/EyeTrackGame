@@ -24,4 +24,8 @@ public class CodeEventHandler : MonoBehaviour
 
     public static event Action StopTemperatureChange;
     public static void Trigger_StopTemperatureChange() { StopTemperatureChange?.Invoke(); }
+
+    public static event Action<int> HightLightFlower;
+
+    public static void Trigger_HightLightFlower(int i) { HightLightFlower?.Invoke(i); }
 }

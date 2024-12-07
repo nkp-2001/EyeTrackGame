@@ -16,6 +16,7 @@ public class SelectRightStep : RecipeStep
     {
         this.instruction = string.Format(this.instruction, ((Flowers)value).ToString());
     }
+  
 
     override public float EvaluateCompareStep(RecipeStep otherStep)
     {

@@ -6,8 +6,8 @@ public class HightLight : MonoBehaviour
 {
     [SerializeField] public Material highlightMaterial = null;
 
-    private List<Material[]> defaultMaterialList = new List<Material[]>();
-    private MeshRenderer[] meshRenderers;
+    public List<Material[]> defaultMaterialList = new List<Material[]>();
+    public MeshRenderer[] meshRenderers;
     [SerializeField] bool onlyparent = false;
 
     bool hightlight;
@@ -23,14 +23,21 @@ public class HightLight : MonoBehaviour
 
     private void Start()
     {
+        SetUpMaterialRefrence();
+       
+    }
+
+    protected virtual void SetUpMaterialRefrence()
+    {
         meshRenderers = GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer MS in meshRenderers)
-        {       
+        {
             defaultMaterialList.Add(MS.materials);
-            
+
         }
         eyeTrackTest = FindAnyObjectByType<EyeTrackTest>();
     }
+
     private void Update()
     {
         if (eyeTrackTest != null)
@@ -74,7 +81,7 @@ public class HightLight : MonoBehaviour
         }
     }
 
-    private void HightLighting()
+    protected virtual void HightLighting()
     {
         if (highlightMaterial != null)
         {
@@ -86,8 +93,9 @@ public class HightLight : MonoBehaviour
             {
                 foreach (MeshRenderer MS in meshRenderers)
                 {
-                    if(MS.gameObject == Ignore)
+                    if(MS.gameObject != Ignore)
                     {
+                        print("MS.material");
                         MS.material = highlightMaterial;
                     }
                    
@@ -101,7 +109,7 @@ public class HightLight : MonoBehaviour
             UnHightLighting();
         }
     }
-    private void UnHightLighting()
+    protected virtual void UnHightLighting()
     {
         if (onlyparent)
         {
