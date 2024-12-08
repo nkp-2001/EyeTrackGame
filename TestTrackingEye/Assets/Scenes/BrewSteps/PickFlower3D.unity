@@ -237,7 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 4130a5b42bc6585448e7583a679f9d33, type: 2}
-  meshRenderers: []
   onlyparent: 0
   Ignore: {fileID: 0}
   totalBlock: 0
@@ -910,7 +909,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 4130a5b42bc6585448e7583a679f9d33, type: 2}
-  meshRenderers: []
   onlyparent: 0
   Ignore: {fileID: 0}
   totalBlock: 0
@@ -2678,7 +2676,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 84
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1235346694
 Transform:
@@ -3660,7 +3658,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 4130a5b42bc6585448e7583a679f9d33, type: 2}
-  meshRenderers: []
   onlyparent: 0
   Ignore: {fileID: 0}
   totalBlock: 0
@@ -4223,7 +4220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 4130a5b42bc6585448e7583a679f9d33, type: 2}
-  meshRenderers: []
   onlyparent: 0
   Ignore: {fileID: 0}
   totalBlock: 0
@@ -4661,7 +4657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 4130a5b42bc6585448e7583a679f9d33, type: 2}
-  meshRenderers: []
   onlyparent: 0
   Ignore: {fileID: 0}
   totalBlock: 0
@@ -5856,7 +5851,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 0}
-  meshRenderers: []
   onlyparent: 0
   Ignore: {fileID: 0}
   totalBlock: 0
@@ -5875,7 +5869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightMaterial: {fileID: 2100000, guid: 4130a5b42bc6585448e7583a679f9d33, type: 2}
-  meshRenderers: []
   onlyparent: 0
   Ignore: {fileID: 0}
   totalBlock: 0
