@@ -12,7 +12,7 @@ public class BasicMoveAway : MonoBehaviour
         if (active)
         {
             destroyAfter -= Time.deltaTime;
-            transform.position = new Vector3(transform.position.x, transform.position.y,transform.position.z - (moveRate+Time.deltaTime));
+            transform.position = new Vector3(transform.position.x, transform.position.y,transform.position.z - (moveRate*Time.deltaTime));
             if(destroyAfter < 0)
             {
                 Destroy(gameObject);
