@@ -4,6 +4,7 @@ using System.Collections.Generic;
 [CreateAssetMenu(menuName = "OwnScriptableObjects/Recipe")]
 public class Recipe : ScriptableObject
 {
+    [SerializeField] string Titel;
     [SerializeField] private List<SoRecipeStep> recipeSteps;
 
     public List<SoRecipeStep> GetRecipeStepsRaw() { return recipeSteps; }
@@ -19,6 +20,10 @@ public class Recipe : ScriptableObject
 
 
        
+    }
+    public string GetTitel()
+    {
+        return Titel;
     }
 
 

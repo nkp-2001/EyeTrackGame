@@ -79,6 +79,10 @@ public class RecipeMangment : MonoBehaviour
     {
         return recipeSteps[step];
     }
+    public String GetRecipeTitel()
+    {
+        return recipe.GetTitel();
+    }
 
 
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf7d5f4c3de9a048afb35ed3a9b05fb, type: 3}
   m_Name: Mortals
   m_EditorClassIdentifier: 
-  value: 4
-  instruction: Look first at Pitfull and then at Bowl
+  value: 3
+  instruction: Look first at Pitfull and then at Bowl. Do this {0} times.
   sceneIndex: 5
   errorBased: 1
   errorWeight: 0.1
