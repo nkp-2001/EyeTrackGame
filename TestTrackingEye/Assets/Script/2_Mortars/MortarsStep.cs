@@ -18,6 +18,9 @@ public class MortarsStep : StepGameHandler
     [SerializeField] AudioClip succesSound;
     [SerializeField] AudioClip failSound;
 
+    [SerializeField] ChangeMaterial markerPitfull; 
+    [SerializeField] ChangeMaterial markerBowl;
+
     private void Start()
     {
         time = maxTime;
@@ -55,13 +58,12 @@ public class MortarsStep : StepGameHandler
     override public void GetSelection(int i)
     {
         if (blocked) // 1 = First to selected // 2 = Secound to Selcted // Rest = wrong
-        {
-            print("valiue:" + i);
+        {         
             if (selectFirstField)
             {
                 if (i == 1)
                 {
-                    print("----------------Seleced");
+                    markerPitfull.HightLighting();
                     selectFirstField = false;
                     AudioSource.PlayClipAtPoint(succesSound,transform.position,0.5f);
                 }
@@ -75,7 +77,7 @@ public class MortarsStep : StepGameHandler
             {
                 if (i == 2)
                 {
-                    print("----------------Seleced2");
+     
                     blocked = true;
                     stepsToDO--;
                     AudioSource.PlayClipAtPoint(succesSound, transform.position,1);
@@ -85,7 +87,7 @@ public class MortarsStep : StepGameHandler
                     }
                     else
                     {
-                        print("----------------Seleced2");         
+                        markerPitfull.UnHightLighting();
                         mortalShuffle.Shuffle();
                         selectFirstField = true;
                     }

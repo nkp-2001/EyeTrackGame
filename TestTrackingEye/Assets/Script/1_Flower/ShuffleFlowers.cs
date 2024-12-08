@@ -13,6 +13,8 @@ public class ShuffleFlowers : MonoBehaviour
 
     [SerializeField] bool ThreeDMode = true;
 
+    [SerializeField] float WaitTillShuffel = 12;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +30,7 @@ public class ShuffleFlowers : MonoBehaviour
     }
     IEnumerator SwitchTreeTimes()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(WaitTillShuffel);
 
 
         foreach (FlowerNumber child in children)
