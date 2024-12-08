@@ -2,20 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HightLight : MonoBehaviour
+public class HightLight : ChangeMaterial
 {
-    [SerializeField] public Material highlightMaterial = null;
-
-    public List<Material[]> defaultMaterialList = new List<Material[]>();
-    public MeshRenderer[] meshRenderers;
-    [SerializeField] bool onlyparent = false;
-
-    bool hightlight;
-
     EyeTrackTest eyeTrackTest;
-
-    [SerializeField] GameObject Ignore;
-
 
     public bool totalBlock;
 
@@ -27,7 +16,7 @@ public class HightLight : MonoBehaviour
        
     }
 
-    protected virtual void SetUpMaterialRefrence()
+    protected override void SetUpMaterialRefrence()
     {
         meshRenderers = GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer MS in meshRenderers)
@@ -79,52 +68,5 @@ public class HightLight : MonoBehaviour
         {
             UnHightLighting();
         }
-    }
-
-    protected virtual void HightLighting()
-    {
-        if (highlightMaterial != null)
-        {
-            if (onlyparent)
-            {
-                gameObject.GetComponent<Renderer>().material = highlightMaterial;
-            }
-            else
-            {
-                foreach (MeshRenderer MS in meshRenderers)
-                {
-                    if(MS.gameObject != Ignore)
-                    {
-                        print("MS.material");
-                        MS.material = highlightMaterial;
-                    }
-                   
-                }
-                
-            }
-            hightlight = true;
-        }
-        else
-        {
-            UnHightLighting();
-        }
-    }
-    protected virtual void UnHightLighting()
-    {
-        if (onlyparent)
-        {
-            gameObject.GetComponent<Renderer>().material = defaultMaterialList[0][0];
-        }
-        else
-        {
-            int i = 0;
-            foreach (MeshRenderer MS in meshRenderers)
-            {
-                MS.materials = defaultMaterialList[i];
-                i++;
-            }
-        }
-        
-        hightlight = false;
     }
 }
