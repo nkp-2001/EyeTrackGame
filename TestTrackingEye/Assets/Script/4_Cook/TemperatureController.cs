@@ -6,8 +6,8 @@ public class TemperatureController : MonoBehaviour
     [Header("UI Components")]
     public Slider temperatureSlider; // Der UI-Slider, der die aktuelle Temperatur anzeigt
     public Image sliderFill; // Das Bild, das die Füllfarbe des Sliders anzeigt
-    public RectTransform optimalMinIndicator; // Indikator für den unteren Bereich
-    public RectTransform optimalMaxIndicator; // Indikator für den oberen Bereich
+    public RectTransform optimalMinIndicator; // Optional: Indikator für den unteren Bereich
+    public RectTransform optimalMaxIndicator; // Optional: Indikator für den oberen Bereich
 
     [Header("Temperature Settings")]
     public float minTemperature = 0f; // Minimale Temperatur
@@ -17,23 +17,23 @@ public class TemperatureController : MonoBehaviour
     public float temperatureChangeSpeed = 20f; // Geschwindigkeit, mit der sich die Temperatur ändert
     public float temperatureAutoChangeSpeed = 0.005f; // Geschwindigkeit, mit der sich die Temperatur automatisch ändert
 
-
     public float currentTemperature; // Aktuelle Temperatur
     private bool isIncreasing = false; // Gibt an, ob die Temperatur gerade steigt
     private bool isDecreasing = false; // Gibt an, ob die Temperatur gerade sinkt
 
     void Start()
     {
-        // Initialisiere die Temperatur auf 0 und setze die Slider-Werte
-        currentTemperature = 50f; // Temperatur beginnt bei der hälfte
+        // Initialisiere die Temperatur auf die Mitte des Bereichs und setze die Slider-Werte
+        currentTemperature = 50f;
         temperatureSlider.minValue = minTemperature;
         temperatureSlider.maxValue = maxTemperature;
+
         UpdateSlider(); // Aktualisiere die UI-Anzeige
-        UpdateIndicators(); // Positioniere die Indikatoren
     }
 
     void Update()
     {
+        // Automatische Abkühlung
         currentTemperature -= temperatureAutoChangeSpeed * Time.deltaTime;
 
         // Temperatur basierend auf den Eingaben erhöhen oder verringern
@@ -61,6 +61,8 @@ public class TemperatureController : MonoBehaviour
         {
             sliderFill.color = Color.red; // Rot, wenn die Temperatur außerhalb des optimalen Bereichs ist
         }
+
+
     }
 
     // Methode, um das Erhöhen der Temperatur zu starten oder zu stoppen
@@ -81,24 +83,5 @@ public class TemperatureController : MonoBehaviour
         temperatureSlider.value = currentTemperature;
     }
 
-    // Aktualisiere die Position der Indikatoren
-    private void UpdateIndicators()
-    {
-        float sliderHeight = temperatureSlider.GetComponent<RectTransform>().sizeDelta.y;
-
-        if (optimalMinIndicator != null)
-        {
-            // Berechne die Y-Position für optimalMin in Prozent relativ zur Slider-Höhe
-            float minPercent = (optimalMin - minTemperature) / (maxTemperature - minTemperature);
-            optimalMinIndicator.anchoredPosition = new Vector2(optimalMinIndicator.anchoredPosition.x, sliderHeight * minPercent);
-        }
-
-        if (optimalMaxIndicator != null)
-        {
-            // Berechne die Y-Position für optimalMax in Prozent relativ zur Slider-Höhe
-            float maxPercent = (optimalMax - minTemperature) / (maxTemperature - minTemperature);
-            optimalMaxIndicator.anchoredPosition = new Vector2(optimalMaxIndicator.anchoredPosition.x, sliderHeight * maxPercent);
-        }
-    }
+   
 }
- 
