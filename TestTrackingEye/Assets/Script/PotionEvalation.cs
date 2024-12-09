@@ -13,13 +13,14 @@ public class PotionEvalation : MonoBehaviour
 
         List<RecipeStep> RecipeSteps = mangment.recipeSteps;
         List<RecipeStep> playerPerformanceSteps = mangment.playerPerformanceSteps;
+        List<RecipeStep> recipeInfo = mangment.recipeSteps;
 
 
         for (int i = 0; i < mangment.playerPerformanceSteps.Count ; i++)
         {
             float value = playerPerformanceSteps[i].EvaluateCompareStep(RecipeSteps[i]);
-            string[] descriptions = { "Correctly pick a flower", "Grind the ingredients", "Stir correctly", "Properly boil" };
-            text.text += "\n" + descriptions[i] + ": " + value;
+            string desicptionResult = recipeInfo[i].ResultScreenText;
+            text.text +=  desicptionResult + ": " + value + "\n";
         }
 
        

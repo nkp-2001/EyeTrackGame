@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d49cbbc2ff6a084f94d5f976ae27e7b, type: 3}
-  m_Name: Flowe1
+  m_Script: {fileID: 11500000, guid: ccf7d5f4c3de9a048afb35ed3a9b05fb, type: 3}
+  m_Name: Mortals
   m_EditorClassIdentifier: 
-  value: -1
-  instruction: Pick the {0}
-  sceneIndex: 4
-  errorBased: 0
+  value: 3
+  instruction: Look first at Pitfull and then at Bowl. Do this {0} times.
+  sceneIndex: 5
+  errorBased: 1
   errorWeight: 0.1
-  flower: 0
+  resultText: Grind the ingredients

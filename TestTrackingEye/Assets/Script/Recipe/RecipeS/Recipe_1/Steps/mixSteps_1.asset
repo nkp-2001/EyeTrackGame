@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccf7d5f4c3de9a048afb35ed3a9b05fb, type: 3}
-  m_Name: Mortals
+  m_Name: mixSteps_1
   m_EditorClassIdentifier: 
-  value: 3
-  instruction: Look first at Pitfull and then at Bowl. Do this {0} times.
-  sceneIndex: 5
+  value: 1
+  instruction: Match the Patten. Look long enough to select.Do this {0} times.
+  sceneIndex: 8
   errorBased: 1
   errorWeight: 0.1
+  resultText: Stir correctly

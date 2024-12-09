@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SelectRightStep : RecipeStep
 {
-    public SelectRightStep(Flowers flower, string instruction, int sceneIndex) : base((int)flower, instruction, sceneIndex)
+    public SelectRightStep(Flowers flower, string instruction, int sceneIndex,string resultText) : base((int)flower, instruction, sceneIndex, resultText)
     {
         
     }

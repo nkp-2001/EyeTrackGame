@@ -7,7 +7,7 @@ public class SoSelectRightStep : SoRecipeStep
 
     public override RecipeStep CreateRecipeStepObject()
     {
-        return new SelectRightStep(flower, instruction, sceneIndex);
+        return new SelectRightStep(flower, instruction, sceneIndex,resultText);
     }
 
 }

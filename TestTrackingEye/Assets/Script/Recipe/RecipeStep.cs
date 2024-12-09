@@ -14,22 +14,26 @@ public class RecipeStep
 
     protected string instruction = "Null";
 
+    protected string resultScreenText = "";
+
     protected int nextsceneIndex = -1;
 
-    public RecipeStep(int value, string instruction,int sceneIndex)
+    public RecipeStep(int value, string instruction,int sceneIndex, string resultText)
     {
         this.value = value;
         this.nextsceneIndex = sceneIndex;
         this.instruction = instruction;
+        this.resultScreenText = resultText;
         SetInstruction();
     }
-    public RecipeStep(int value, string instruction, int sceneIndex,bool errorBased,float errorWeight)
+    public RecipeStep(int value, string instruction, int sceneIndex,bool errorBased,float errorWeight,string resultText)
     {
         this.value = value;
         this.nextsceneIndex = sceneIndex;
         this.instruction = instruction;
         this.errorBased = errorBased;
         this.errorWeight = errorWeight; 
+        this.resultScreenText = resultText;  
         SetInstruction();
     }
     public RecipeStep(int value)
@@ -45,6 +49,7 @@ public class RecipeStep
     public int Value { get => value; set => this.value = value; }
     public string Instruction { get => instruction; set => instruction = value; }
     public int SceneIndex { get => nextsceneIndex; set => nextsceneIndex = value; }
+    public string ResultScreenText { get => resultScreenText; set => resultScreenText = value; }
 
     virtual public void SetInstruction()
     {
