@@ -41,19 +41,25 @@ public class PatternVisualizer : MonoBehaviour
         isShowingPattern = false; // Musteranzeige beenden
     }
 
-    
+
 
     private void ActivateMarker(int gridIndex, int markerIndex)
     {
         // Hole das Grid-Feld
         GameObject gridField = gridFields[gridIndex];
 
-        // Prüfe, ob das Grid-Feld 4 Child-Objekte hat
-        if (gridField.transform.childCount >= markerIndex + 1)
+        // Hole das erste Child-Objekt des Grid-Feldes, das als MarkerGroup dient
+        Transform markerGroup = gridField.transform.GetChild(0);
+
+        // Prüfe, ob MarkerGroup genügend Marker hat
+        if (markerGroup != null && markerGroup.childCount > markerIndex)
         {
-            // Aktiviere das entsprechende Child-Objekt
-            Transform marker = gridField.transform.GetChild(markerIndex);
+            Transform marker = markerGroup.GetChild(markerIndex);
             marker.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning($"MarkerGroup oder Marker {markerIndex} nicht gefunden in {gridField.name}");
         }
     }
 
@@ -62,10 +68,20 @@ public class PatternVisualizer : MonoBehaviour
         // Setze alle Marker in allen Grid-Feldern zurück
         foreach (GameObject field in gridFields)
         {
-            for (int i = 0; i < field.transform.childCount; i++)
+            // Hole das erste Child-Objekt als MarkerGroup
+            Transform markerGroup = field.transform.GetChild(0);
+
+            // Überprüfen, ob MarkerGroup existiert und die Marker zurücksetzen
+            if (markerGroup != null)
             {
-                field.transform.GetChild(i).gameObject.SetActive(false);
+                for (int i = 0; i < markerGroup.childCount; i++)
+                {
+                    markerGroup.GetChild(i).gameObject.SetActive(false);
+                }
             }
         }
     }
+
+
+
 }
