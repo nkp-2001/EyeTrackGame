@@ -4,7 +4,7 @@ using UnityEngine;
 public class PatternGenerator : MonoBehaviour
 {
     public GameObject[] gridFields; // Alle Felder in deinem 2x4-Grid
-    public int gridWidth = 4; // Anzahl der Felder pro Zeile
+    public int gridWidth = 3; // Anzahl der Felder pro Zeile
     public List<int> pattern = new List<int>(); // Das generierte Muster
     public int patternLength = 4; // Länge des gewünschten Musters
 
