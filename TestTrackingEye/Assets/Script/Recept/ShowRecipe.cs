@@ -20,7 +20,7 @@ public class ShowRecipe : MonoBehaviour
         var instructionlist = recipeMangment.GetAllStepsInstrcutions();
         for (int i = 0; i < instructionlist.Count; i++)
         {
-            InstructionText.text += ("#" + (i+1) + instructionlist[i]) +"\n";
+            InstructionText.text += ("#" + (i+1) + ". " + instructionlist[i]) +"\n";
         }
         InstructionText.text = InstructionText.text.Replace("_", " ");
         TitelText.text = recipeMangment.GetRecipeTitel();
