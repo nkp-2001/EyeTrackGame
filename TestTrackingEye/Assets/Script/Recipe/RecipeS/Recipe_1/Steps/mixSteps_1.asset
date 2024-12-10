@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: mixSteps_1
   m_EditorClassIdentifier: 
   value: 1
-  instruction: Match the Patten. Look long enough to select.Do this {0} times.
+  instruction: Follow the sequence. Look until they disappear .Do this {0} times.
   sceneIndex: 8
   errorBased: 1
   errorWeight: 0.1
