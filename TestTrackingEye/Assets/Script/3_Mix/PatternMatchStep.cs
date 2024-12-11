@@ -10,6 +10,9 @@ public class PatternMatchStep : StepGameHandler
     public int currentIndex = 0;
     public int stepsToDO;
 
+    [SerializeField] AudioClip succesSound;
+    [SerializeField] AudioClip failSound;
+
 
     private void Start()
     {
@@ -60,6 +63,7 @@ public class PatternMatchStep : StepGameHandler
         if (selectedValue == currentPattern[currentIndex])
         {
             currentIndex++;
+            AudioSource.PlayClipAtPoint(succesSound, transform.position, 0.5f);
 
             // Marker beim ausgewählten Feld deaktivieren
             DeactivateMarker(selectedValue);
@@ -93,6 +97,7 @@ public class PatternMatchStep : StepGameHandler
 
                 // Alle Marker wieder sichtbar machen
                 ResetAllMarkers();
+                AudioSource.PlayClipAtPoint(failSound, transform.position, 0.5f);
 
                 patternVisualizer.ShowPattern();
             }
@@ -132,7 +137,6 @@ public class PatternMatchStep : StepGameHandler
 
             material.color = new Color(color.r, color.g, color.b, 0f);
         }
-
         obj.SetActive(false);
     }
 
@@ -145,7 +149,7 @@ public class PatternMatchStep : StepGameHandler
             {
                 field.transform.GetChild(i).gameObject.SetActive(true);
             }
-        }
+        }        
     }
 
     override public void EndStep()

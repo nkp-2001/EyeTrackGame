@@ -1331,6 +1331,8 @@ MonoBehaviour:
   currentTemperature: 0
   isIncreasing: 0
   isDecreasing: 0
+  tempUpSound: {fileID: 8300000, guid: 8deb724b09472c644996b36aa14e8baf, type: 3}
+  tempDownSound: {fileID: 8300000, guid: 4972bd82195206046ae9e601d78a085e, type: 3}
 --- !u!4 &420415649
 Transform:
   m_ObjectHideFlags: 0

@@ -3371,6 +3371,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   markedAfter: 6
+  succesSound: {fileID: 8300000, guid: eab1d782748cfea45a70dbeb45f68d4f, type: 3}
+  failSound: {fileID: 8300000, guid: 6a75d687d2a531741b8750a246bb0e6c, type: 3}
 --- !u!1 &1364344383
 GameObject:
   m_ObjectHideFlags: 0

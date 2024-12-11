@@ -7,6 +7,9 @@ public class PickFlowerStep : StepGameHandler
     SelectRightStep step;
     [SerializeField] float markedAfter = 8;
 
+    [SerializeField] AudioClip succesSound;
+    [SerializeField] AudioClip failSound;
+
     private void OnEnable()
     {
         CodeEventHandler.BasicSelection += GetSelection;

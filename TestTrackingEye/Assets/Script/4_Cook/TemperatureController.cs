@@ -21,8 +21,18 @@ public class TemperatureController : MonoBehaviour
     public bool isIncreasing = false; // Gibt an, ob die Temperatur gerade steigt
     public bool isDecreasing = false; // Gibt an, ob die Temperatur gerade sinkt
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip tempUpSound;
+    [SerializeField] private AudioClip tempDownSound;
+    private AudioSource audioSource; // Einzige Audioquelle
+
+    bool upSoundIsPlaying;
+    bool downSoundIsPlaying;
+
     void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+
         // Initialisiere die Temperatur auf die Mitte des Bereichs und setze die Slider-Werte
         currentTemperature = 50f;
         temperatureSlider.minValue = minTemperature;
@@ -42,12 +52,28 @@ public class TemperatureController : MonoBehaviour
             Debug.Log("Erhöhe Temperatur Bool");
             temperatureAutoChangeSpeed = 0f;
             currentTemperature += temperatureChangeSpeed * Time.deltaTime;
+            
+            AudioClip sound = tempUpSound;
+            if (!audioSource.isPlaying || audioSource.clip != sound)
+            {
+                audioSource.clip = sound;
+                audioSource.volume = 0.5f;
+                audioSource.Play();
+            }
         }
         else if (isDecreasing)
         {
             Debug.Log("Verringere Temperatur Bool");
             temperatureAutoChangeSpeed = 0f;
             currentTemperature -= temperatureChangeSpeed * Time.deltaTime;
+
+            AudioClip sound = tempDownSound;
+            if (!audioSource.isPlaying || audioSource.clip != sound)
+            {
+                audioSource.clip = sound;
+                audioSource.volume = 0.5f;
+                audioSource.Play();
+            }
         }
         else
         {

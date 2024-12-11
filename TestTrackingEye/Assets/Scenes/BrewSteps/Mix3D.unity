@@ -7409,6 +7409,8 @@ MonoBehaviour:
   currentPattern: 
   currentIndex: 0
   stepsToDO: 1
+  succesSound: {fileID: 8300000, guid: eab1d782748cfea45a70dbeb45f68d4f, type: 3}
+  failSound: {fileID: 8300000, guid: 6a75d687d2a531741b8750a246bb0e6c, type: 3}
 --- !u!114 &1490062876
 MonoBehaviour:
   m_ObjectHideFlags: 0
