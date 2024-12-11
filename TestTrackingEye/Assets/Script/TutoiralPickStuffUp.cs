@@ -8,6 +8,9 @@ public class TutoiralPickStuffUp : MonoBehaviour
                                          false,false,false };
 
     [SerializeField] GameObject[] Brewobject;
+
+    [SerializeField] AudioClip succesSound;
+
     private void OnEnable()
     {
         CodeEventHandler.BasicSelection += GetSelection;
@@ -19,6 +22,7 @@ public class TutoiralPickStuffUp : MonoBehaviour
         {
             fields[i] = true;
             Brewobject[i].GetComponent<BasicMoveAway>().Active();
+            AudioSource.PlayClipAtPoint(succesSound, transform.position, 0.5f);
         }
        
         if (fields.All(x => x))

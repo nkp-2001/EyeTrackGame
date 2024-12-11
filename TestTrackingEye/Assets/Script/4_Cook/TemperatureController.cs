@@ -57,7 +57,7 @@ public class TemperatureController : MonoBehaviour
             if (!audioSource.isPlaying || audioSource.clip != sound)
             {
                 audioSource.clip = sound;
-                audioSource.volume = 0.5f;
+                audioSource.volume = 0.3f;
                 audioSource.Play();
             }
         }
@@ -71,7 +71,7 @@ public class TemperatureController : MonoBehaviour
             if (!audioSource.isPlaying || audioSource.clip != sound)
             {
                 audioSource.clip = sound;
-                audioSource.volume = 0.5f;
+                audioSource.volume = 0.3f;
                 audioSource.Play();
             }
         }

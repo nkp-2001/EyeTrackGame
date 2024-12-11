@@ -3303,6 +3303,7 @@ MonoBehaviour:
   - {fileID: 1641448506}
   - {fileID: 707718376}
   - {fileID: 1055715463}
+  succesSound: {fileID: 8300000, guid: eab1d782748cfea45a70dbeb45f68d4f, type: 3}
 --- !u!1001 &1353979880
 PrefabInstance:
   m_ObjectHideFlags: 0
