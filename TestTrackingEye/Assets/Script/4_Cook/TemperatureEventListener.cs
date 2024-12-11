@@ -11,8 +11,8 @@ public class TemperatureEventListener : StepGameHandler
     public float selectionTimer = 0f; // Zählt die Zeit seit der letzten Auswahl
     public float timeOutsideOptimal = 0f; // Zeit außerhalb des optimalen Bereichs
     public float timeInsideOptimal = 0f; // Zeit innerhalb des optimalen Bereichs
-    public const float penaltyTime = 15f; // Zeit, nach der außerhalb des Bereichs ein Punkt abgezogen wird
-    public const float successTime = 10f; // Zeit, die im optimalen Bereich verbracht werden muss, um zu gewinnen
+    public float penaltyTime = 15f; // Zeit, nach der außerhalb des Bereichs ein Punkt abgezogen wird
+    public float successTime = 10f; // Zeit, die im optimalen Bereich verbracht werden muss, um zu gewinnen
     public bool iswinning;
 
     private void Start()
@@ -95,19 +95,20 @@ public class TemperatureEventListener : StepGameHandler
         if (value == 0)
         {
             // Temperatur erhöhen
+            Debug.Log("Temperatur erhöhen");
             temperatureController.IncreaseTemperature(true);
             temperatureController.DecreaseTemperature(false); // Sicherstellen, dass Senken gestoppt wird
+                                                              // Zusätzliche Debug-Ausgabe
+            Debug.Log($"isIncreasing: {temperatureController.isIncreasing}");
         }
         if (value == 1)
         {
             // Temperatur verringern
+            Debug.Log("Temperatur verringern");
             temperatureController.DecreaseTemperature(true);
             temperatureController.IncreaseTemperature(false); // Sicherstellen, dass Erhöhen gestoppt wird
         }
-        else
-        {
-            StopTemperatureChange();
-        }
+        
     }
 
     private void StopTemperatureChange()

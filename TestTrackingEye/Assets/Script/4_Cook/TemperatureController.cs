@@ -15,11 +15,11 @@ public class TemperatureController : MonoBehaviour
     public float optimalMin = 40f; // Untere Grenze des optimalen Bereichs
     public float optimalMax = 60f; // Obere Grenze des optimalen Bereichs
     public float temperatureChangeSpeed = 20f; // Geschwindigkeit, mit der sich die Temperatur ändert
-    public float temperatureAutoChangeSpeed = 0.005f; // Geschwindigkeit, mit der sich die Temperatur automatisch ändert
+    public float temperatureAutoChangeSpeed = 3f; // Geschwindigkeit, mit der sich die Temperatur automatisch ändert
 
     public float currentTemperature; // Aktuelle Temperatur
-    private bool isIncreasing = false; // Gibt an, ob die Temperatur gerade steigt
-    private bool isDecreasing = false; // Gibt an, ob die Temperatur gerade sinkt
+    public bool isIncreasing = false; // Gibt an, ob die Temperatur gerade steigt
+    public bool isDecreasing = false; // Gibt an, ob die Temperatur gerade sinkt
 
     void Start()
     {
@@ -39,11 +39,19 @@ public class TemperatureController : MonoBehaviour
         // Temperatur basierend auf den Eingaben erhöhen oder verringern
         if (isIncreasing)
         {
+            Debug.Log("Erhöhe Temperatur Bool");
+            temperatureAutoChangeSpeed = 0f;
             currentTemperature += temperatureChangeSpeed * Time.deltaTime;
         }
         else if (isDecreasing)
         {
+            Debug.Log("Verringere Temperatur Bool");
+            temperatureAutoChangeSpeed = 0f;
             currentTemperature -= temperatureChangeSpeed * Time.deltaTime;
+        }
+        else
+        {
+            temperatureAutoChangeSpeed = 3f;
         }
 
         // Temperatur innerhalb der festgelegten Grenzen halten
