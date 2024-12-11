@@ -1326,7 +1326,7 @@ MonoBehaviour:
   maxTemperature: 100
   optimalMin: 65
   optimalMax: 80
-  temperatureChangeSpeed: 20
+  temperatureChangeSpeed: 15
   temperatureAutoChangeSpeed: 3
   currentTemperature: 0
   isIncreasing: 0

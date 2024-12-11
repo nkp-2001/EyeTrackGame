@@ -52,7 +52,7 @@ public class TemperatureEventListener : StepGameHandler
         }
         else
         {
-            StopTemperatureChange();
+            //StopTemperatureChange();
         }
 
         // Überprüfe die aktuelle Temperatur
