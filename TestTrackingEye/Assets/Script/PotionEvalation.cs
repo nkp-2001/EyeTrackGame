@@ -18,9 +18,9 @@ public class PotionEvalation : MonoBehaviour
 
         for (int i = 0; i < mangment.playerPerformanceSteps.Count ; i++)
         {
-            float value = playerPerformanceSteps[i].EvaluateCompareStep(RecipeSteps[i]);
+            float value = playerPerformanceSteps[i].EvaluateCompareStep(RecipeSteps[i]) *100; 
             string desicptionResult = recipeInfo[i].ResultScreenText;
-            text.text +=  desicptionResult + ": " + value + "\n";
+            text.text +=  desicptionResult + ": " + value + "%" + "\n";
         }
 
        
