@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System;
+using System.Collections;
 
 public class RecipeMangment : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class RecipeMangment : MonoBehaviour
     public List<RecipeStep> recipeSteps;
     public List<RecipeStep> playerPerformanceSteps;
     [SerializeField] int step = 0;
-
-  
+    Animator animator;
+    bool Loading = false;
+    bool onFirstScene = true;
 
     private void OnEnable()
     {
@@ -33,6 +35,26 @@ public class RecipeMangment : MonoBehaviour
     private void Start()
     {
         playerPerformanceSteps = new List<RecipeStep>();
+
+        animator = GetComponentInChildren<Animator>();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            if(onFirstScene)
+            {
+                StartSystem();
+            }
+            else
+            {
+                RecordAndNextStep(new RecipeStep(true));          
+            }        
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void GetSteps(Recipe recipe)
@@ -48,27 +70,39 @@ public class RecipeMangment : MonoBehaviour
     }
 
     public void NextStep()
-    {
-        step++;
-        if(step >= recipeSteps.Count)
-        {
-            SceneManager.LoadScene(3);
-        }
-        else
-        {
-            SceneManager.LoadScene(recipeSteps[step].SceneIndex);
-        }
+    {      
+            Loading = true;
+            step++;
+            if (step >= recipeSteps.Count)
+            {
+                StartCoroutine(LoadingSceneWithTransition(3));
+            }
+            else
+            {
+                StartCoroutine(LoadingSceneWithTransition(recipeSteps[step].SceneIndex));
+            }     
     }
     public void RecordAndNextStep(RecipeStep step)
     {
-        playerPerformanceSteps.Add(step);
-        print(playerPerformanceSteps[0]);
-        NextStep();
+        if (!Loading)
+        {
+            Loading = true;
+            playerPerformanceSteps.Add(step);
+            print(playerPerformanceSteps[0]);
+            NextStep();
+        }
+      
     }
     public void StartSystem() // for steo
     {
         step = 0;
-        SceneManager.LoadScene(recipeSteps[step].SceneIndex);
+        onFirstScene = false;
+        if (!Loading)
+        {
+            Loading = true;
+            StartCoroutine(LoadingSceneWithTransition(recipeSteps[step].SceneIndex));
+        }
+      
     }
     private void OnDisable()
     {
@@ -82,6 +116,19 @@ public class RecipeMangment : MonoBehaviour
     public String GetRecipeTitel()
     {
         return recipe.GetTitel();
+    }
+    IEnumerator LoadingSceneWithTransition(int i)
+    { 
+       
+            if (animator != null)
+            {
+                print("FadeOutComeing");
+                animator.SetTrigger("FadeOut");
+                yield return new WaitForSeconds(0.20f);
+            }
+            SceneManager.LoadScene(i);
+            Loading = false;
+            animator.SetTrigger("FadeIn");
     }
 
 

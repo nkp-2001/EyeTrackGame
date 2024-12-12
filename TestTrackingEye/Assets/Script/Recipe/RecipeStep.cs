@@ -18,6 +18,8 @@ public class RecipeStep
 
     protected int nextsceneIndex = -1;
 
+    bool skiped = false;
+
     public RecipeStep(int value, string instruction,int sceneIndex, string resultText)
     {
         this.value = value;
@@ -40,6 +42,10 @@ public class RecipeStep
     {
         this.value = value;
     }
+    public RecipeStep(bool skip)
+    {
+        this.skiped = skip;
+    }
     public RecipeStep(bool errorBased, int errors)
     {
         this.errorBased = errorBased;
@@ -58,6 +64,10 @@ public class RecipeStep
 
     virtual public float EvaluateCompareStep(RecipeStep otherStep)
     {
+        if (skiped)
+        {
+            return 0.0f;
+        }
         float result = 1;
         if (errorBased)
         {           

@@ -15,6 +15,9 @@ public class PotionEvalation : MonoBehaviour
         List<RecipeStep> playerPerformanceSteps = mangment.playerPerformanceSteps;
         List<RecipeStep> recipeInfo = mangment.recipeSteps;
 
+      
+        print(playerPerformanceSteps.Count);
+
 
         for (int i = 0; i < mangment.playerPerformanceSteps.Count ; i++)
         {
