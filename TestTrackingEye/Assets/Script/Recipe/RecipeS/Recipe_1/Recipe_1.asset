@@ -15,6 +15,7 @@ MonoBehaviour:
   Titel: Red Moon Potion
   recipeSteps:
   - {fileID: 11400000, guid: e29fb6fda133a9245b8b08aa7310fea9, type: 2}
+  - {fileID: 11400000, guid: e92cb3f506c06ec4abf81c5af3efe015, type: 2}
+  - {fileID: 11400000, guid: 4b16a65d378cd4a4e8caa3356f4bf15d, type: 2}
   - {fileID: 11400000, guid: 959301fa0f06fff43a41e003444cbd8c, type: 2}
   - {fileID: 11400000, guid: 6f93afc3b6bef2d46a4b932bd26fd5e9, type: 2}
-  - {fileID: 11400000, guid: 4b16a65d378cd4a4e8caa3356f4bf15d, type: 2}

@@ -12,6 +12,8 @@ public class ShowInstructionOfStep : MonoBehaviour
         {
             instructionText.text = recipeMangment.GetCurrentStepData().Instruction;
         }
-       
+        instructionText.text = instructionText.text.Replace("_", " ");
+
+
     }
 }
