@@ -110,11 +110,9 @@ public class PatternMatchStep : StepGameHandler
         GameObject field = patternVisualizer.gridFields[selectedValue];
 
         // Deaktiviere alle Marker im Grid-Feld
-        for (int i = 0; i < field.transform.childCount; i++)
-        {
-            GameObject child = field.transform.GetChild(i).gameObject;
-            StartCoroutine(FadeOutAndDeactivate(child));
-        }
+        GameObject child = field.transform.GetChild(0).gameObject;
+        StartCoroutine(FadeOutAndDeactivate(child));
+        
     }
 
     private IEnumerator FadeOutAndDeactivate(GameObject obj)
