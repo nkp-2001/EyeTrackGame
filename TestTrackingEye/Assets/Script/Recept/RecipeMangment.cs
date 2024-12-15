@@ -95,6 +95,7 @@ public class RecipeMangment : MonoBehaviour
     }
     public void StartSystem() // for steo
     {
+        ResetRecord();
         step = 0;
         onFirstScene = false;
         if (!Loading)
@@ -119,7 +120,6 @@ public class RecipeMangment : MonoBehaviour
     }
     IEnumerator LoadingSceneWithTransition(int i)
     { 
-       
             if (animator != null)
             {
                 print("FadeOutComeing");
@@ -129,6 +129,10 @@ public class RecipeMangment : MonoBehaviour
             SceneManager.LoadScene(i);
             Loading = false;
             animator.SetTrigger("FadeIn");
+    }
+    public void ResetRecord()
+    {
+        playerPerformanceSteps = new List<RecipeStep>();
     }
 
 
