@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: cookSteps_1
   m_EditorClassIdentifier: 
   value: 1
-  instruction: Keep the temperature in the selected area. Be carefull not to overshoot!
+  instruction: Keep the temperature in the selected area. Be careful not to overshoot!
   sceneIndex: 6
   errorBased: 1
   errorWeight: 0.1
